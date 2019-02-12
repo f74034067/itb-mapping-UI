@@ -82,9 +82,9 @@
             // 
             this.button_read_avifile.Location = new System.Drawing.Point(637, 72);
             this.button_read_avifile.Name = "button_read_avifile";
-            this.button_read_avifile.Size = new System.Drawing.Size(99, 27);
+            this.button_read_avifile.Size = new System.Drawing.Size(105, 27);
             this.button_read_avifile.TabIndex = 4;
-            this.button_read_avifile.Text = "Read AVI File";
+            this.button_read_avifile.Text = "Open AVI File";
             this.button_read_avifile.UseVisualStyleBackColor = true;
             this.button_read_avifile.Click += new System.EventHandler(this.button_read_avifile_Click);
             // 
@@ -92,10 +92,11 @@
             // 
             this.button_read_itbfile.Location = new System.Drawing.Point(637, 135);
             this.button_read_itbfile.Name = "button_read_itbfile";
-            this.button_read_itbfile.Size = new System.Drawing.Size(99, 27);
+            this.button_read_itbfile.Size = new System.Drawing.Size(105, 27);
             this.button_read_itbfile.TabIndex = 5;
-            this.button_read_itbfile.Text = "Read ITB File";
+            this.button_read_itbfile.Text = "Open ITB File";
             this.button_read_itbfile.UseVisualStyleBackColor = true;
+            this.button_read_itbfile.Click += new System.EventHandler(this.button_read_itbfile_Click);
             // 
             // button_confirm
             // 
@@ -106,6 +107,7 @@
             this.button_confirm.TabIndex = 6;
             this.button_confirm.Text = "confirm";
             this.button_confirm.UseVisualStyleBackColor = true;
+            this.button_confirm.Click += new System.EventHandler(this.button_confirm_Click);
             // 
             // button_exit
             // 
