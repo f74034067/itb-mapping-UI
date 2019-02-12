@@ -1,6 +1,6 @@
 ﻿namespace itb_mapping_UI
 {
-    partial class Form_Readfile
+    partial class Readfile
     {
         /// <summary>
         /// Required designer variable.
@@ -80,10 +80,9 @@
             // 
             // button_read_avifile
             // 
-            this.button_read_avifile.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button_read_avifile.Location = new System.Drawing.Point(637, 72);
             this.button_read_avifile.Name = "button_read_avifile";
-            this.button_read_avifile.Size = new System.Drawing.Size(175, 27);
+            this.button_read_avifile.Size = new System.Drawing.Size(105, 27);
             this.button_read_avifile.TabIndex = 4;
             this.button_read_avifile.Text = "Open AVI File";
             this.button_read_avifile.UseVisualStyleBackColor = true;
@@ -91,10 +90,9 @@
             // 
             // button_read_itbfile
             // 
-            this.button_read_itbfile.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button_read_itbfile.Location = new System.Drawing.Point(637, 135);
             this.button_read_itbfile.Name = "button_read_itbfile";
-            this.button_read_itbfile.Size = new System.Drawing.Size(175, 27);
+            this.button_read_itbfile.Size = new System.Drawing.Size(105, 27);
             this.button_read_itbfile.TabIndex = 5;
             this.button_read_itbfile.Text = "Open ITB File";
             this.button_read_itbfile.UseVisualStyleBackColor = true;
@@ -120,13 +118,12 @@
             this.button_exit.TabIndex = 7;
             this.button_exit.Text = "cancel";
             this.button_exit.UseVisualStyleBackColor = true;
-            this.button_exit.Click += new System.EventHandler(this.button_exit_Click);
             // 
-            // Form_Readfile
+            // Readfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(962, 450);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button_exit);
             this.Controls.Add(this.button_confirm);
             this.Controls.Add(this.button_read_itbfile);
@@ -135,7 +132,7 @@
             this.Controls.Add(this.textBox_avifile);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form_Readfile";
+            this.Name = "Readfile";
             this.Text = "Readfile";
             this.ResumeLayout(false);
             this.PerformLayout();

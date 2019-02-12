@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace itb_mapping_UI
 {
-    public partial class Form_Readfile : Form
+    public partial class Readfile : Form
     {
-        public Form_Readfile()
+        public Readfile()
         {
             InitializeComponent();
         }
@@ -53,14 +53,7 @@ namespace itb_mapping_UI
 
         private void button_confirm_Click(object sender, EventArgs e)
         {
-            //this.Visible = false;
-            this.Close();
-        }
 
-        private void button_exit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Environment.Exit(Environment.ExitCode);
         }
     }
 }

@@ -16,8 +16,7 @@ namespace itb_mapping_UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Readfile());
-            Application.Run(new Form_MappingInterface());
+            Application.Run(new Readfile());
         }
     }
 }
