@@ -36,13 +36,16 @@
             this.button_read_itbfile = new System.Windows.Forms.Button();
             this.button_confirm = new System.Windows.Forms.Button();
             this.button_exit = new System.Windows.Forms.Button();
+            this.button_read_avi_csvfile = new System.Windows.Forms.Button();
+            this.textBox_avi_csv = new System.Windows.Forms.TextBox();
+            this.label_avi_csv = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(42, 63);
+            this.label1.Location = new System.Drawing.Point(46, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 36);
             this.label1.TabIndex = 0;
@@ -52,7 +55,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(46, 126);
+            this.label2.Location = new System.Drawing.Point(46, 169);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 36);
             this.label2.TabIndex = 1;
@@ -62,26 +65,26 @@
             // 
             this.textBox_avifile.BackColor = System.Drawing.SystemColors.HighlightText;
             this.textBox_avifile.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox_avifile.Location = new System.Drawing.Point(183, 72);
+            this.textBox_avifile.Location = new System.Drawing.Point(202, 73);
             this.textBox_avifile.Name = "textBox_avifile";
             this.textBox_avifile.ReadOnly = true;
-            this.textBox_avifile.Size = new System.Drawing.Size(405, 27);
+            this.textBox_avifile.Size = new System.Drawing.Size(518, 27);
             this.textBox_avifile.TabIndex = 2;
             // 
             // textBox_itbfile
             // 
             this.textBox_itbfile.BackColor = System.Drawing.SystemColors.HighlightText;
             this.textBox_itbfile.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox_itbfile.Location = new System.Drawing.Point(183, 137);
+            this.textBox_itbfile.Location = new System.Drawing.Point(202, 178);
             this.textBox_itbfile.Name = "textBox_itbfile";
             this.textBox_itbfile.ReadOnly = true;
-            this.textBox_itbfile.Size = new System.Drawing.Size(405, 27);
+            this.textBox_itbfile.Size = new System.Drawing.Size(518, 27);
             this.textBox_itbfile.TabIndex = 3;
             // 
             // button_read_avifile
             // 
             this.button_read_avifile.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button_read_avifile.Location = new System.Drawing.Point(637, 72);
+            this.button_read_avifile.Location = new System.Drawing.Point(761, 73);
             this.button_read_avifile.Name = "button_read_avifile";
             this.button_read_avifile.Size = new System.Drawing.Size(175, 27);
             this.button_read_avifile.TabIndex = 4;
@@ -92,7 +95,7 @@
             // button_read_itbfile
             // 
             this.button_read_itbfile.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button_read_itbfile.Location = new System.Drawing.Point(637, 135);
+            this.button_read_itbfile.Location = new System.Drawing.Point(761, 177);
             this.button_read_itbfile.Name = "button_read_itbfile";
             this.button_read_itbfile.Size = new System.Drawing.Size(175, 27);
             this.button_read_itbfile.TabIndex = 5;
@@ -103,7 +106,7 @@
             // button_confirm
             // 
             this.button_confirm.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button_confirm.Location = new System.Drawing.Point(48, 291);
+            this.button_confirm.Location = new System.Drawing.Point(202, 327);
             this.button_confirm.Name = "button_confirm";
             this.button_confirm.Size = new System.Drawing.Size(183, 53);
             this.button_confirm.TabIndex = 6;
@@ -114,7 +117,7 @@
             // button_exit
             // 
             this.button_exit.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button_exit.Location = new System.Drawing.Point(272, 291);
+            this.button_exit.Location = new System.Drawing.Point(537, 327);
             this.button_exit.Name = "button_exit";
             this.button_exit.Size = new System.Drawing.Size(183, 53);
             this.button_exit.TabIndex = 7;
@@ -122,11 +125,45 @@
             this.button_exit.UseVisualStyleBackColor = true;
             this.button_exit.Click += new System.EventHandler(this.button_exit_Click);
             // 
+            // button_read_avi_csvfile
+            // 
+            this.button_read_avi_csvfile.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button_read_avi_csvfile.Location = new System.Drawing.Point(761, 128);
+            this.button_read_avi_csvfile.Name = "button_read_avi_csvfile";
+            this.button_read_avi_csvfile.Size = new System.Drawing.Size(175, 27);
+            this.button_read_avi_csvfile.TabIndex = 10;
+            this.button_read_avi_csvfile.Text = "Open AVI_CSV File";
+            this.button_read_avi_csvfile.UseVisualStyleBackColor = true;
+            this.button_read_avi_csvfile.Click += new System.EventHandler(this.button_read_avi_csvfile_Click);
+            // 
+            // textBox_avi_csv
+            // 
+            this.textBox_avi_csv.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.textBox_avi_csv.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.textBox_avi_csv.Location = new System.Drawing.Point(202, 127);
+            this.textBox_avi_csv.Name = "textBox_avi_csv";
+            this.textBox_avi_csv.ReadOnly = true;
+            this.textBox_avi_csv.Size = new System.Drawing.Size(518, 27);
+            this.textBox_avi_csv.TabIndex = 9;
+            // 
+            // label_avi_csv
+            // 
+            this.label_avi_csv.AutoSize = true;
+            this.label_avi_csv.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label_avi_csv.Location = new System.Drawing.Point(12, 120);
+            this.label_avi_csv.Name = "label_avi_csv";
+            this.label_avi_csv.Size = new System.Drawing.Size(184, 36);
+            this.label_avi_csv.TabIndex = 8;
+            this.label_avi_csv.Text = "AVI_CSV File";
+            // 
             // Form_Readfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 450);
+            this.Controls.Add(this.button_read_avi_csvfile);
+            this.Controls.Add(this.textBox_avi_csv);
+            this.Controls.Add(this.label_avi_csv);
             this.Controls.Add(this.button_exit);
             this.Controls.Add(this.button_confirm);
             this.Controls.Add(this.button_read_itbfile);
@@ -152,5 +189,8 @@
         private System.Windows.Forms.Button button_read_itbfile;
         private System.Windows.Forms.Button button_confirm;
         private System.Windows.Forms.Button button_exit;
+        private System.Windows.Forms.Button button_read_avi_csvfile;
+        private System.Windows.Forms.TextBox textBox_avi_csv;
+        private System.Windows.Forms.Label label_avi_csv;
     }
 }

@@ -13,9 +13,14 @@ namespace itb_mapping_UI
 {
     public partial class Form_MappingInterface : Form
     {
-        public Form_MappingInterface()
+        public Form_MappingInterface(string avi, string avi_csv, string itb_csv)
         {
             InitializeComponent();
+            /* show file path
+            MessageBox.Show("1."+avi);
+            MessageBox.Show("2."+avi_csv);
+            MessageBox.Show("3."+itb_csv);
+            */
         }
         private void button_Play(object sender, EventArgs e)
         {
@@ -48,6 +53,6 @@ namespace itb_mapping_UI
             */
         }
 
-
+  
     }
 }
