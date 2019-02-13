@@ -23,7 +23,7 @@ namespace itb_mapping_UI
             file.RestoreDirectory = true;
             file.InitialDirectory = "c:\\";
             file.Title = "Open AVI File";
-            file.Filter = "avi影像檔|*.avi|所有檔|*.*";
+            file.Filter = "所有影像檔|*.mp4;*.avi|所有檔|*.*";
             file.FilterIndex = 1;
 
             if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -69,6 +69,11 @@ namespace itb_mapping_UI
 
         private void button_confirm_Click(object sender, EventArgs e)
         {
+            /*testbox information*/
+            this.textBox_avifile.Text = "C:\\Users\\black\\Desktop\\MAH00761.MP4";
+            this.textBox_avi_csv.Text = "C:\\Users\\black\\Desktop\\MAH00761.MP4";
+            this.textBox_itbfile.Text = "C:\\Users\\black\\Desktop\\MAH00761.MP4";
+            
             if (this.textBox_avifile.Text.Equals("")|| this.textBox_avi_csv.Text.Equals("")|| this.textBox_itbfile.Text.Equals(""))
             {   //retry
                 DialogResult result = MessageBox.Show("Please choose the file path and try again");  
