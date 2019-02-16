@@ -67,17 +67,7 @@
             this.button_stop.Text = "Stop";
             this.button_stop.UseVisualStyleBackColor = true;
             this.button_stop.Click += new System.EventHandler(this.button_Stop);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(260, 426);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 26);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "ITB File";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+
             // 
             // Form_MappingInterface
             // 

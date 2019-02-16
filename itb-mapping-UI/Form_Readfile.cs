@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace itb_mapping_UI
 {
     public partial class Form_Readfile : Form
@@ -71,8 +72,8 @@ namespace itb_mapping_UI
         {
             /*testbox information*/
             this.textBox_avifile.Text = "C:\\Users\\black\\Desktop\\MAH00761.MP4";
-            this.textBox_avi_csv.Text = "C:\\Users\\black\\Desktop\\MAH00761.MP4";
-            this.textBox_itbfile.Text = "C:\\Users\\black\\Desktop\\MAH00761.MP4";
+            this.textBox_avi_csv.Text = "C:\\Users\\black\\Desktop\\test_avi.csv";
+            this.textBox_itbfile.Text = "C:\\Users\\black\\Desktop\\test_mapping_data.csv";
             
             if (this.textBox_avifile.Text.Equals("")|| this.textBox_avi_csv.Text.Equals("")|| this.textBox_itbfile.Text.Equals(""))
             {   //retry
@@ -80,6 +81,7 @@ namespace itb_mapping_UI
             }
             else
             {
+                //open form_mapping_interface
                 Form_MappingInterface form_mapping_interface = new Form_MappingInterface(this.textBox_avifile.Text, this.textBox_avi_csv.Text, this.textBox_itbfile.Text);
                 this.Visible = false;
                 form_mapping_interface.ShowDialog();
@@ -92,7 +94,6 @@ namespace itb_mapping_UI
             this.Close();
             Environment.Exit(Environment.ExitCode);
         }
-
 
     }
 }
