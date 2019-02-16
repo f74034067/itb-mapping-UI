@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;                //讀檔
 using System.Collections.Specialized; //NameValueCollection
+//using System.Globalization;
+
 
 namespace itb_mapping_UI
 {
@@ -128,20 +130,22 @@ namespace itb_mapping_UI
             int endTimeIdx = 4;
             string starttime = splitline(line, startTimeIdx);
             string endtime = splitline(line, endTimeIdx);
-            string starttime_UnMSec = String.Copy(starttime.Split('.')[0]);
-            string endtime_UnMSec = String.Copy(endtime.Split('.')[0]);
+            //string starttime_UnMSec = init_datetime(String.Copy(starttime.Split('.')[0]));
+            //string endtime_UnMSec = init_datetime(String.Copy(endtime.Split('.')[0]));
+            string starttime_UnMSec = init_datetime(starttime);
+            string endtime_UnMSec = init_datetime(endtime);
 
             //for loop form starttime to endtime
-            if (is_time_LessThanOrEqual(starttime, endtime))
+            if (is_time_LessThanOrEqual(starttime_UnMSec, endtime_UnMSec))
             {
-                while (is_time_LessThanOrEqual(starttime_UnMSec, endtime_UnMSec))
+                do
                 {
                     // add(key,vaule) into NVC
                     // key = starttime , value = line
-                     NVC.Add(starttime_UnMSec, line);
+                    NVC.Add(starttime_UnMSec, line);
                     //whileloop control
-                    starttime_UnMSec=addSecond(starttime_UnMSec, 1);
-                }
+                    starttime_UnMSec = addSecond(starttime_UnMSec, 1);
+                } while (is_time_LessThanOrEqual(starttime_UnMSec, endtime_UnMSec));
             }
             else
             {
@@ -186,8 +190,13 @@ namespace itb_mapping_UI
         }
         private string addSecond(string time,double addValue)
         {
+            //string format= "yyyy-MM-dd HH:mm:ss";
             DateTime date_time = DateTime.Parse(time);
-            date_time=date_time.AddSeconds(addValue);
+            date_time =date_time.AddSeconds(addValue);
+            return date_time.ToString();
+        }
+        private string init_datetime(string time) {
+            DateTime date_time = DateTime.Parse(time);
             return date_time.ToString();
         }
     }
