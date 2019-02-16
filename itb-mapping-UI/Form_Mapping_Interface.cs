@@ -18,6 +18,7 @@ namespace itb_mapping_UI
     {
         public Form_MappingInterface(string filepath_avi, string filepath_avicsv, string filepath_itbcsv)
         {
+            //starttime = "2018/10/4 下午 03:00:07"
             InitializeComponent();
             // show file path
             /*
@@ -33,9 +34,13 @@ namespace itb_mapping_UI
             //axWindowsMediaPlayer1.uiMode = "none";
 
             //AVI_CSV Initial setting
-            Initialize_avicsv(filepath_avicsv);
+            Initialize_file_avicsv(filepath_avicsv);
             //ITB_CSV Initial setting
-            Initialize_itbcsv(filepath_itbcsv);
+            Initialize_file_itbcsv(filepath_itbcsv);
+            //datagredview_avicsv Initial setting
+            //Initialize_datagredview_avicsv();
+            //datagredview_itbcsv Initial setting
+            //Initialize_datagredview_itbcsv();
         }
         private void button_Play(object sender, EventArgs e)
         {
@@ -47,7 +52,7 @@ namespace itb_mapping_UI
             axWindowsMediaPlayer1.Ctlcontrols.pause();
         }
 
-        private void Initialize_avicsv(string filepath) {
+        private void Initialize_file_avicsv(string filepath) {
             try
             {
                 NameValueCollection NVC_avicsv = new NameValueCollection();
@@ -66,7 +71,7 @@ namespace itb_mapping_UI
                 MessageBox.Show(ex.Message + ": Initialize_avicsv");
             }
         }
-        private void Initialize_itbcsv(string filepath)
+        private void Initialize_file_itbcsv(string filepath)
         {
             try
             {
@@ -119,6 +124,7 @@ namespace itb_mapping_UI
 
             int timeIdx = 0;
             string time = splitline(line, timeIdx).Split('.')[0];
+            //string time = init_datetime(splitline(line, timeIdx));
             // add(key,vaule) into NVC
             // key = time , value = line
             NVC.Add(time, line);
@@ -161,7 +167,6 @@ namespace itb_mapping_UI
 
         private bool is_time_LessThanOrEqual(string start, string end)
         {
-            //"2018-10-04 15:00:07.057343"
             try
             {
                 DateTime date_start = DateTime.Parse(start);
@@ -190,7 +195,6 @@ namespace itb_mapping_UI
         }
         private string addSecond(string time,double addValue)
         {
-            //string format= "yyyy-MM-dd HH:mm:ss";
             DateTime date_time = DateTime.Parse(time);
             date_time =date_time.AddSeconds(addValue);
             return date_time.ToString();
