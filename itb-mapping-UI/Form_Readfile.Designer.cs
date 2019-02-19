@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label_itbfile = new System.Windows.Forms.Label();
             this.textBox_avifile = new System.Windows.Forms.TextBox();
             this.textBox_itbfile = new System.Windows.Forms.TextBox();
             this.button_read_avifile = new System.Windows.Forms.Button();
@@ -39,6 +39,13 @@
             this.button_read_avi_csvfile = new System.Windows.Forms.Button();
             this.textBox_avi_csv = new System.Windows.Forms.TextBox();
             this.label_avi_csv = new System.Windows.Forms.Label();
+            this.label_starttime = new System.Windows.Forms.Label();
+            this.dropdownlist_year = new System.Windows.Forms.ComboBox();
+            this.dropdownlist_month = new System.Windows.Forms.ComboBox();
+            this.dropdownlist_days = new System.Windows.Forms.ComboBox();
+            this.dropdownlist_hours = new System.Windows.Forms.ComboBox();
+            this.dropdownlist_min = new System.Windows.Forms.ComboBox();
+            this.dropdownlist_sec = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -51,15 +58,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "AVI File";
             // 
-            // label2
+            // label_itbfile
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(46, 169);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 36);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ITB File";
+            this.label_itbfile.AutoSize = true;
+            this.label_itbfile.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label_itbfile.Location = new System.Drawing.Point(46, 169);
+            this.label_itbfile.Name = "label_itbfile";
+            this.label_itbfile.Size = new System.Drawing.Size(113, 36);
+            this.label_itbfile.TabIndex = 1;
+            this.label_itbfile.Text = "ITB File";
             // 
             // textBox_avifile
             // 
@@ -156,11 +163,82 @@
             this.label_avi_csv.TabIndex = 8;
             this.label_avi_csv.Text = "AVI_CSV File";
             // 
+            // label_starttime
+            // 
+            this.label_starttime.AutoSize = true;
+            this.label_starttime.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label_starttime.Location = new System.Drawing.Point(12, 231);
+            this.label_starttime.Name = "label_starttime";
+            this.label_starttime.Size = new System.Drawing.Size(169, 36);
+            this.label_starttime.TabIndex = 11;
+            this.label_starttime.Text = "Start Time :";
+            // 
+            // dropdownlist_year
+            // 
+            this.dropdownlist_year.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropdownlist_year.FormattingEnabled = true;
+            this.dropdownlist_year.Location = new System.Drawing.Point(202, 243);
+            this.dropdownlist_year.Name = "dropdownlist_year";
+            this.dropdownlist_year.Size = new System.Drawing.Size(121, 23);
+            this.dropdownlist_year.TabIndex = 12;
+            // 
+            // dropdownlist_month
+            // 
+            this.dropdownlist_month.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropdownlist_month.FormattingEnabled = true;
+            this.dropdownlist_month.Location = new System.Drawing.Point(329, 243);
+            this.dropdownlist_month.Name = "dropdownlist_month";
+            this.dropdownlist_month.Size = new System.Drawing.Size(121, 23);
+            this.dropdownlist_month.TabIndex = 13;
+            // 
+            // dropdownlist_days
+            // 
+            this.dropdownlist_days.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropdownlist_days.FormattingEnabled = true;
+            this.dropdownlist_days.Location = new System.Drawing.Point(456, 243);
+            this.dropdownlist_days.Name = "dropdownlist_days";
+            this.dropdownlist_days.Size = new System.Drawing.Size(121, 23);
+            this.dropdownlist_days.TabIndex = 14;
+            // 
+            // dropdownlist_hours
+            // 
+            this.dropdownlist_hours.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropdownlist_hours.FormattingEnabled = true;
+            this.dropdownlist_hours.Location = new System.Drawing.Point(595, 243);
+            this.dropdownlist_hours.Name = "dropdownlist_hours";
+            this.dropdownlist_hours.Size = new System.Drawing.Size(97, 23);
+            this.dropdownlist_hours.TabIndex = 15;
+            // 
+            // dropdownlist_min
+            // 
+            this.dropdownlist_min.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropdownlist_min.FormattingEnabled = true;
+            this.dropdownlist_min.Location = new System.Drawing.Point(698, 243);
+            this.dropdownlist_min.Name = "dropdownlist_min";
+            this.dropdownlist_min.Size = new System.Drawing.Size(97, 23);
+            this.dropdownlist_min.TabIndex = 16;
+            // 
+            // dropdownlist_sec
+            // 
+            this.dropdownlist_sec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropdownlist_sec.FormattingEnabled = true;
+            this.dropdownlist_sec.Location = new System.Drawing.Point(801, 243);
+            this.dropdownlist_sec.Name = "dropdownlist_sec";
+            this.dropdownlist_sec.Size = new System.Drawing.Size(97, 23);
+            this.dropdownlist_sec.TabIndex = 17;
+            // 
             // Form_Readfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 450);
+            this.Controls.Add(this.dropdownlist_sec);
+            this.Controls.Add(this.dropdownlist_min);
+            this.Controls.Add(this.dropdownlist_hours);
+            this.Controls.Add(this.dropdownlist_days);
+            this.Controls.Add(this.dropdownlist_month);
+            this.Controls.Add(this.dropdownlist_year);
+            this.Controls.Add(this.label_starttime);
             this.Controls.Add(this.button_read_avi_csvfile);
             this.Controls.Add(this.textBox_avi_csv);
             this.Controls.Add(this.label_avi_csv);
@@ -170,7 +248,7 @@
             this.Controls.Add(this.button_read_avifile);
             this.Controls.Add(this.textBox_itbfile);
             this.Controls.Add(this.textBox_avifile);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label_itbfile);
             this.Controls.Add(this.label1);
             this.Name = "Form_Readfile";
             this.Text = "Readfile";
@@ -182,7 +260,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label_itbfile;
         private System.Windows.Forms.TextBox textBox_avifile;
         private System.Windows.Forms.TextBox textBox_itbfile;
         private System.Windows.Forms.Button button_read_avifile;
@@ -192,5 +270,12 @@
         private System.Windows.Forms.Button button_read_avi_csvfile;
         private System.Windows.Forms.TextBox textBox_avi_csv;
         private System.Windows.Forms.Label label_avi_csv;
+        private System.Windows.Forms.Label label_starttime;
+        private System.Windows.Forms.ComboBox dropdownlist_year;
+        private System.Windows.Forms.ComboBox dropdownlist_month;
+        private System.Windows.Forms.ComboBox dropdownlist_days;
+        private System.Windows.Forms.ComboBox dropdownlist_hours;
+        private System.Windows.Forms.ComboBox dropdownlist_min;
+        private System.Windows.Forms.ComboBox dropdownlist_sec;
     }
 }

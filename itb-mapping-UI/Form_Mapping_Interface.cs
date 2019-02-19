@@ -13,7 +13,7 @@ namespace itb_mapping_UI
 {
     public partial class Form_MappingInterface : Form
     {
-        public Form_MappingInterface(string avi, string avi_csv, string itb_csv)
+        public Form_MappingInterface(string avi, string avi_csv, string itb_csv,DateTime StartTime)
         {
             InitializeComponent();
             /* show file path
