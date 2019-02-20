@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;                //讀檔
+using System.Collections.Specialized; //NameValueCollection
+//using System.Globalization;
+
 
 namespace itb_mapping_UI
 {
@@ -17,7 +20,6 @@ namespace itb_mapping_UI
         {
             //starttime = "2018/10/4 下午 03:00:07"
             InitializeComponent();
-            MessageBox.Show("1."+avi);
             // show file path
             /*
             MessageBox.Show("1."+ filepath_avi);
