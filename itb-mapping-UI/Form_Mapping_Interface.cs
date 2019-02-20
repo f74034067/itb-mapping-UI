@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;                //讀檔
 using System.Collections.Specialized; //NameValueCollection
+using System.Timers;
 //using System.Globalization;
 
 
@@ -16,10 +17,15 @@ namespace itb_mapping_UI
 {
     public partial class Form_MappingInterface : Form
     {
+        private System.Timers.Timer _TimersTimer;
         public Form_MappingInterface(string filepath_avi, string filepath_avicsv, string filepath_itbcsv,DateTime StartTime)
         {
             //starttime = "2018/10/4 下午 03:00:07"
             InitializeComponent();
+            this._TimersTimer = new System.Timers.Timer();
+            this._TimersTimer.Interval = 1000;
+            this._TimersTimer.SynchronizingObject = this;
+            this._TimersTimer.Elapsed += new System.Timers.ElapsedEventHandler(_TimersTimer_Elapsed);
             // show file path
             /*
             MessageBox.Show("1."+ filepath_avi);
@@ -42,6 +48,13 @@ namespace itb_mapping_UI
             //datagredview_itbcsv Initial setting
             //Initialize_datagredview_itbcsv();
         }
+
+        private void _TimersTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            CurrentPosition.Text = axWindowsMediaPlayer1.Ctlcontrols.currentPosition.ToString();
+            //throw new NotImplementedException();
+        }
+
         private void button_Play(object sender, EventArgs e)
         {
             axWindowsMediaPlayer1.Ctlcontrols.play();
@@ -202,6 +215,16 @@ namespace itb_mapping_UI
         private string init_datetime(string time) {
             DateTime date_time = DateTime.Parse(time);
             return date_time.ToString();
+        }
+
+        private void axWindowsMediaPlayer1_PositionChange(object sender, AxWMPLib._WMPOCXEvents_PositionChangeEvent e)
+        {
+            this._TimersTimer.Start();
+        }
+
+        private void axWindowsMediaPlayer1_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+        {
+            this._TimersTimer.Start();
         }
     }
 }
