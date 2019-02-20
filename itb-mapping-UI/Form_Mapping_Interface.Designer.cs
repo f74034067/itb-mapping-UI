@@ -33,7 +33,11 @@
             this.button_play = new System.Windows.Forms.Button();
             this.button_stop = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.dataGridView_avicsv = new System.Windows.Forms.DataGridView();
+            this.dataGridView__itbcsv = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_avicsv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView__itbcsv)).BeginInit();
             this.SuspendLayout();
             // 
             // axWindowsMediaPlayer1
@@ -48,7 +52,7 @@
             // 
             // button_play
             // 
-            this.button_play.Location = new System.Drawing.Point(15, 426);
+            this.button_play.Location = new System.Drawing.Point(12, 343);
             this.button_play.Margin = new System.Windows.Forms.Padding(4);
             this.button_play.Name = "button_play";
             this.button_play.Size = new System.Drawing.Size(80, 26);
@@ -59,7 +63,7 @@
             // 
             // button_stop
             // 
-            this.button_stop.Location = new System.Drawing.Point(103, 426);
+            this.button_stop.Location = new System.Drawing.Point(100, 343);
             this.button_stop.Margin = new System.Windows.Forms.Padding(4);
             this.button_stop.Name = "button_stop";
             this.button_stop.Size = new System.Drawing.Size(80, 26);
@@ -70,20 +74,36 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(260, 426);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(0, 0);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 26);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "ITB File";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 0;
+            // 
+            // dataGridView_avicsv
+            // 
+            this.dataGridView_avicsv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_avicsv.Location = new System.Drawing.Point(510, 46);
+            this.dataGridView_avicsv.Name = "dataGridView_avicsv";
+            this.dataGridView_avicsv.RowTemplate.Height = 27;
+            this.dataGridView_avicsv.Size = new System.Drawing.Size(489, 265);
+            this.dataGridView_avicsv.TabIndex = 5;
+            // 
+            // dataGridView__itbcsv
+            // 
+            this.dataGridView__itbcsv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView__itbcsv.Location = new System.Drawing.Point(12, 399);
+            this.dataGridView__itbcsv.Name = "dataGridView__itbcsv";
+            this.dataGridView__itbcsv.RowTemplate.Height = 27;
+            this.dataGridView__itbcsv.Size = new System.Drawing.Size(987, 257);
+            this.dataGridView__itbcsv.TabIndex = 6;
             // 
             // Form_MappingInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1297, 562);
+            this.ClientSize = new System.Drawing.Size(1297, 747);
+            this.Controls.Add(this.dataGridView__itbcsv);
+            this.Controls.Add(this.dataGridView_avicsv);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button_stop);
             this.Controls.Add(this.button_play);
@@ -92,6 +112,8 @@
             this.Name = "Form_MappingInterface";
             this.Text = "Mapping interface";
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_avicsv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView__itbcsv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -102,6 +124,8 @@
         private System.Windows.Forms.Button button_play;
         private System.Windows.Forms.Button button_stop;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dataGridView_avicsv;
+        private System.Windows.Forms.DataGridView dataGridView__itbcsv;
     }
 }
 

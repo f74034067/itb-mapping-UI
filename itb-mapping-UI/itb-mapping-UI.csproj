@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="list_avi_csv.cs" />
     <Compile Include="Form_Mapping_Interface.cs">
       <SubType>Form</SubType>
     </Compile>

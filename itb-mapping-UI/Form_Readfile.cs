@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 
+
 namespace itb_mapping_UI
 {
     public partial class Form_Readfile : Form
@@ -25,7 +26,7 @@ namespace itb_mapping_UI
             file.RestoreDirectory = true;
             file.InitialDirectory = "c:\\";
             file.Title = "Open AVI File";
-            file.Filter = "avi影像檔|*.avi|所有檔|*.*";
+            file.Filter = "所有影像檔|*.mp4;*.avi|所有檔|*.*";
             file.FilterIndex = 1;
 
             if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -82,12 +83,18 @@ namespace itb_mapping_UI
             StartTime = DateTime.ParseExact(dropdownlist_sec.SelectedItem.ToString(), "ss秒", provider);
             
             //test file exists
+            /*testbox information*/
+            this.textBox_avifile.Text = "C:\\Users\\black\\Desktop\\MAH00761.MP4";
+            this.textBox_avi_csv.Text = "C:\\Users\\black\\Desktop\\test_avi.csv";
+            this.textBox_itbfile.Text = "C:\\Users\\black\\Desktop\\test_mapping_data.csv";
+
             if (this.textBox_avifile.Text.Equals("")|| this.textBox_avi_csv.Text.Equals("")|| this.textBox_itbfile.Text.Equals(""))
             {   //retry
                 DialogResult result = MessageBox.Show("Please choose the file path and try again");  
             }
             else
             {
+                //open form_mapping_interface
                 Form_MappingInterface form_mapping_interface = new Form_MappingInterface(this.textBox_avifile.Text, this.textBox_avi_csv.Text, this.textBox_itbfile.Text,StartTime);
                 this.Visible = false;
                 form_mapping_interface.ShowDialog();
@@ -100,6 +107,7 @@ namespace itb_mapping_UI
             this.Close();
             Environment.Exit(Environment.ExitCode);
         }
+
 
         private void InitializeStartTime() {
             for (int i = -1; i < 5; i++)
