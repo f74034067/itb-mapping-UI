@@ -84,7 +84,7 @@ namespace itb_mapping_UI
             
             //test file exists
             /*testbox information*/
-            this.textBox_avifile.Text = "C:\\Users\\black\\Desktop\\MAH00761.MP4";
+            this.textBox_avifile.Text = "C:\\Users\\Kevin\\Desktop\\MAH00761.MP4";
             this.textBox_avi_csv.Text = "C:\\Users\\black\\Desktop\\test_avi.csv";
             this.textBox_itbfile.Text = "C:\\Users\\black\\Desktop\\test_mapping_data.csv";
 

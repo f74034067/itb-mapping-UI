@@ -18,27 +18,20 @@ namespace itb_mapping_UI
     public partial class Form_MappingInterface : Form
     {
         private System.Timers.Timer _TimersTimer;
+        int i = 0;
         public Form_MappingInterface(string filepath_avi, string filepath_avicsv, string filepath_itbcsv,DateTime StartTime)
         {
-            //starttime = "2018/10/4 下午 03:00:07"
-            InitializeComponent();
-            this._TimersTimer = new System.Timers.Timer();
-            this._TimersTimer.Interval = 1000;
-            this._TimersTimer.SynchronizingObject = this;
-            this._TimersTimer.Elapsed += new System.Timers.ElapsedEventHandler(_TimersTimer_Elapsed);
             // show file path
             /*
             MessageBox.Show("1."+ filepath_avi);
             MessageBox.Show("2."+ filepath_avicsv);
             MessageBox.Show("3."+ filepath_itbcsv);
             */
-
-            //AVI Initial setting
-            axWindowsMediaPlayer1.settings.autoStart = false;
-            axWindowsMediaPlayer1.URL = filepath_avi;
-            //axWindowsMediaPlayer1.Ctlcontrols.stop();
-            //axWindowsMediaPlayer1.uiMode = "none";
-
+            //starttime = "2018/10/4 下午 03:00:07"
+   
+            InitializeComponent();
+            Initialize_timer();
+            Initialize_axWindowsMediaPlayer(filepath_avi);
             //AVI_CSV Initial setting
             Initialize_file_avicsv(filepath_avicsv);
             //ITB_CSV Initial setting
@@ -51,7 +44,9 @@ namespace itb_mapping_UI
 
         private void _TimersTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            CurrentPosition.Text = axWindowsMediaPlayer1.Ctlcontrols.currentPosition.ToString();
+            //CurrentPosition.Text = axWindowsMediaPlayer1.Ctlcontrols.currentPosition.ToString();
+            i++;
+            CurrentPosition.Text = i.ToString() ;
             //throw new NotImplementedException();
         }
 
@@ -63,6 +58,18 @@ namespace itb_mapping_UI
         private void button_Stop(object sender, EventArgs e)
         {
             axWindowsMediaPlayer1.Ctlcontrols.pause();
+        }
+        private void Initialize_timer() {
+            this._TimersTimer = new System.Timers.Timer();
+            this._TimersTimer.Interval = 1000;
+            this._TimersTimer.SynchronizingObject = this;
+            this._TimersTimer.Elapsed += new System.Timers.ElapsedEventHandler(_TimersTimer_Elapsed);
+        }
+        private void Initialize_axWindowsMediaPlayer(string filepath) {
+            axWindowsMediaPlayer1.settings.autoStart = false;
+            axWindowsMediaPlayer1.URL = filepath;
+            //axWindowsMediaPlayer1.Ctlcontrols.stop();
+            //axWindowsMediaPlayer1.uiMode = "none";
         }
 
         private void Initialize_file_avicsv(string filepath) {
@@ -219,12 +226,34 @@ namespace itb_mapping_UI
 
         private void axWindowsMediaPlayer1_PositionChange(object sender, AxWMPLib._WMPOCXEvents_PositionChangeEvent e)
         {
-            this._TimersTimer.Start();
+            //MessageBox.Show("axWindowsMediaPlayer1_PositionChange");
+            //this._TimersTimer.Start();
+            //更新datagredview
         }
 
         private void axWindowsMediaPlayer1_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
-            this._TimersTimer.Start();
+            try
+            {
+                switch (axWindowsMediaPlayer1.playState)
+                {
+                    case WMPLib.WMPPlayState.wmppsPlaying:
+                        this._TimersTimer.Start();
+                        break;
+                    case WMPLib.WMPPlayState.wmppsPaused:
+                        this._TimersTimer.Stop();
+                        break;
+                    case WMPLib.WMPPlayState.wmppsStopped:
+                        this._TimersTimer.Stop();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("axWindowsMediaPlayer1_PlayStateChange:" + ex.Message);
+            }
         }
     }
 }
