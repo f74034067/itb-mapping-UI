@@ -41,24 +41,9 @@ namespace itb_mapping_UI
             //datagredview_itbcsv Initial setting
             //Initialize_datagredview_itbcsv();
         }
-
-        private void _TimersTimer_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            //CurrentPosition.Text = axWindowsMediaPlayer1.Ctlcontrols.currentPosition.ToString();
-            i++;
-            CurrentPosition.Text = i.ToString() ;
-            //throw new NotImplementedException();
-        }
-
-        private void button_Play(object sender, EventArgs e)
-        {
-            axWindowsMediaPlayer1.Ctlcontrols.play();
-        }
-
-        private void button_Stop(object sender, EventArgs e)
-        {
-            axWindowsMediaPlayer1.Ctlcontrols.pause();
-        }
+        /* ================================================
+         * ==============    Initialize    ================
+         * ================================================*/
         private void Initialize_timer() {
             this._TimersTimer = new System.Timers.Timer();
             this._TimersTimer.Interval = 1000;
@@ -71,7 +56,6 @@ namespace itb_mapping_UI
             //axWindowsMediaPlayer1.Ctlcontrols.stop();
             //axWindowsMediaPlayer1.uiMode = "none";
         }
-
         private void Initialize_file_avicsv(string filepath) {
             try
             {
@@ -112,6 +96,16 @@ namespace itb_mapping_UI
             }
 
         }
+        private void _TimersTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            //CurrentPosition.Text = axWindowsMediaPlayer1.Ctlcontrols.currentPosition.ToString();
+            i++;
+            CurrentPosition.Text = i.ToString();
+            //throw new NotImplementedException();
+        }
+        /* ================================================
+         * =============    file_handle    ================
+         * ================================================*/
         private void ReadLine_And_AddIntoNVC(string filepath, NameValueCollection NVC, Action<string, NameValueCollection> AddIntoNVC) {
             try
             {
@@ -184,7 +178,6 @@ namespace itb_mapping_UI
             string[] ReadLine_Array = line.Split(',');
             return ReadLine_Array[index];
         }
-
         private bool is_time_LessThanOrEqual(string start, string end)
         {
             try
@@ -223,14 +216,26 @@ namespace itb_mapping_UI
             DateTime date_time = DateTime.Parse(time);
             return date_time.ToString();
         }
-
+        /* ================================================
+         * ================    button    ==================
+         * ================================================*/
+        private void button_Play(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.play();
+        }
+        private void button_Stop(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.pause();
+        }
+        /* ================================================
+         * ============    axwindowplayer    ==============
+         * ================================================*/
         private void axWindowsMediaPlayer1_PositionChange(object sender, AxWMPLib._WMPOCXEvents_PositionChangeEvent e)
         {
             //MessageBox.Show("axWindowsMediaPlayer1_PositionChange");
             //this._TimersTimer.Start();
             //更新datagredview
         }
-
         private void axWindowsMediaPlayer1_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
             try

@@ -85,8 +85,8 @@ namespace itb_mapping_UI
             //test file exists
             /*testbox information*/
             this.textBox_avifile.Text = "C:\\Users\\Kevin\\Desktop\\MAH00761.MP4";
-            this.textBox_avi_csv.Text = "C:\\Users\\black\\Desktop\\test_avi.csv";
-            this.textBox_itbfile.Text = "C:\\Users\\black\\Desktop\\test_mapping_data.csv";
+            this.textBox_avi_csv.Text = "C:\\Users\\Kevin\\Desktop\\test_avi.csv";
+            this.textBox_itbfile.Text = "C:\\Users\\Kevin\\Desktop\\test_mapping_data.csv";
 
             if (this.textBox_avifile.Text.Equals("")|| this.textBox_avi_csv.Text.Equals("")|| this.textBox_itbfile.Text.Equals(""))
             {   //retry
@@ -98,6 +98,8 @@ namespace itb_mapping_UI
                 Form_MappingInterface form_mapping_interface = new Form_MappingInterface(this.textBox_avifile.Text, this.textBox_avi_csv.Text, this.textBox_itbfile.Text,StartTime);
                 this.Visible = false;
                 form_mapping_interface.ShowDialog();
+                this.Close();
+                Environment.Exit(Environment.ExitCode);
             }
             //this.Close();
         }
