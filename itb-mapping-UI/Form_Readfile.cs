@@ -75,18 +75,26 @@ namespace itb_mapping_UI
             //get start_time information
             CultureInfo provider = CultureInfo.InvariantCulture;
             DateTime StartTime = new DateTime();
-            StartTime = DateTime.ParseExact(dropdownlist_year.SelectedItem.ToString(),"yyyy年", provider);
-            StartTime = DateTime.ParseExact(dropdownlist_month.SelectedItem.ToString(), "MM月", provider);
-            StartTime = DateTime.ParseExact(dropdownlist_days.SelectedItem.ToString(), "dd日", provider);
-            StartTime = DateTime.ParseExact(dropdownlist_hours.SelectedItem.ToString(), "HH時", provider);
-            StartTime = DateTime.ParseExact(dropdownlist_min.SelectedItem.ToString(), "mm分", provider);
-            StartTime = DateTime.ParseExact(dropdownlist_sec.SelectedItem.ToString(), "ss秒", provider);
-            
+            string dropdownlist_datatime = dropdownlist_year.SelectedItem.ToString() +
+                dropdownlist_month.SelectedItem.ToString() +
+                dropdownlist_days.SelectedItem.ToString() +
+                dropdownlist_hours.SelectedItem.ToString() +
+                dropdownlist_min.SelectedItem.ToString() +
+                dropdownlist_sec.SelectedItem.ToString();
+             StartTime = DateTime.ParseExact(dropdownlist_datatime, "yyyy年MM月dd日HH時mm分ss秒", provider);
+ 
+            /* StartTime = DateTime.ParseExact(dropdownlist_year.SelectedItem.ToString(),"yyyy年", provider);
+             StartTime = DateTime.ParseExact(dropdownlist_month.SelectedItem.ToString(), "MM月", provider);
+             StartTime = DateTime.ParseExact(dropdownlist_days.SelectedItem.ToString(), "dd日", provider);
+             StartTime = DateTime.ParseExact(dropdownlist_hours.SelectedItem.ToString(), "HH時", provider);
+             StartTime = DateTime.ParseExact(dropdownlist_min.SelectedItem.ToString(), "mm分", provider);
+             StartTime = DateTime.ParseExact(dropdownlist_sec.SelectedItem.ToString(), "ss秒", provider);
+             */
             //test file exists
             /*testbox information*/
-            this.textBox_avifile.Text = "C:\\Users\\Kevin\\Desktop\\MAH00761.MP4";
-            this.textBox_avi_csv.Text = "C:\\Users\\Kevin\\Desktop\\test_avi.csv";
-            this.textBox_itbfile.Text = "C:\\Users\\Kevin\\Desktop\\test_mapping_data.csv";
+            this.textBox_avifile.Text = "C:\\Users\\black\\Desktop\\MAH00761.MP4";
+            this.textBox_avi_csv.Text = "C:\\Users\\black\\Desktop\\test_avi.csv";
+            this.textBox_itbfile.Text = "C:\\Users\\black\\Desktop\\mapping_data_hash.csv";
 
             if (this.textBox_avifile.Text.Equals("")|| this.textBox_avi_csv.Text.Equals("")|| this.textBox_itbfile.Text.Equals(""))
             {   //retry

@@ -19,6 +19,7 @@ namespace itb_mapping_UI
     {
         NameValueCollection NVC_avicsv = new NameValueCollection();
         NameValueCollection NVC_itbcsv = new NameValueCollection();
+        DateTime InitTime = new DateTime();
         private System.Timers.Timer _TimersTimer;
         int i = 0;
         public Form_MappingInterface(string filepath_avi, string filepath_avicsv, string filepath_itbcsv,DateTime StartTime)
@@ -29,42 +30,95 @@ namespace itb_mapping_UI
             MessageBox.Show("2."+ filepath_avicsv);
             MessageBox.Show("3."+ filepath_itbcsv);
             */
-            //starttime = "2018/10/4 下午 03:00:07"
-   
+            //StartTime = "2018/10/4 下午 03:00:07"
+            InitTime = StartTime;
             InitializeComponent();
             Initialize_timer();
             Initialize_axWindowsMediaPlayer(filepath_avi);
             //Initial AVI_CSV setting & ITB_CSV setting
             Initialize_file_avicsv(filepath_avicsv);
             Initialize_file_itbcsv(filepath_itbcsv);
-            //datagredview_avicsv Initial setting
-            //Initialize_datagredview_avicsv();
-            //datagredview_itbcsv Initial setting
-            //Initialize_datagredview_itbcsv();
+            //datagredview_avicsv Initial setting & datagredview_itbcsv Initial setting
+            Initialize_datagridview_avicsv(InitTime);
+            Initialize_datagridview_itbcsv(InitTime);
         }
         /* ================================================
          * ============    add new things    ==============
          * ================================================*/
 
-        private void Initialize_datagredview_avicsv()
+        private void Initialize_datagridview_avicsv(DateTime StartTime)
         {
-            //get time now
-            //initial time
+            setup_datagridview_avicsv();
+            //initial time = StartTime
             //print data form initial_time
+            print_DataGridViews_avicsv(StartTime);                        
+        }
+        private void Initialize_datagridview_itbcsv(DateTime StartTime)
+        {
+            setup_datagridview_itbcsv();
+            //initial time = StartTime
+            //print data form initial_time
+            print_DataGridViews_itbcsv(StartTime);
+                    }
+        private void setup_datagridview_avicsv()
+        {
+            dataGridView_avicsv.ColumnCount = 6;
+            dataGridView_avicsv.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView_avicsv.Font, FontStyle.Bold);
+            dataGridView_avicsv.Columns[0].Name = "Vedio Time";
+            dataGridView_avicsv.Columns[1].Name = "Object ID";
+            dataGridView_avicsv.Columns[2].Name = "Time into";
+            dataGridView_avicsv.Columns[3].Name = "Time leave";
+            dataGridView_avicsv.Columns[4].Name = "Lane(in/out)";
+            dataGridView_avicsv.Columns[5].Name = "Vehicle Type";
+        }
+        private void setup_datagridview_itbcsv()
+        {
+            dataGridView_itbcsv.ColumnCount = 7;
+            dataGridView_itbcsv.Columns[0].Name = "ID";
+            dataGridView_itbcsv.Columns[1].Name = "ITB ID";
+            dataGridView_itbcsv.Columns[2].Name = "MAC Address";
+            dataGridView_itbcsv.Columns[3].Name = "Start Time";
+            dataGridView_itbcsv.Columns[4].Name = "MaxRSSI Time";
+            dataGridView_itbcsv.Columns[5].Name = "Max RSSI";
+            dataGridView_itbcsv.Columns[6].Name = "Avg RSSI";
+        }
+        private void print_DaraGridViews_all(DateTime time) {
+            print_DataGridViews_avicsv(time);
+            print_DataGridViews_itbcsv(time);
+        }
 
-        }
-        private void print_DaraGredViews_all(DateTime time) {
-            print_DaraGredViews_avicsv(time);
-            print_DaraGredViews_itbcsv(time);
-        }
-        private void print_DaraGredViews_avicsv(DateTime time)
+        private void print_DataGridViews_avicsv(DateTime time)
         {
-            //NVC_avicsv.Get(time.ToString());
+            dataGridView_avicsv.Rows.Clear();
+            String lines = NVC_avicsv.Get(time.ToString());
+            //split lines to line by ","
+            if (lines != null)
+            {
+                string[] lines_Array = lines.Split(',');
+                foreach (var line in lines_Array)
+                {
+                    string[] line_Array = line.Split('/');
+                    dataGridView_avicsv.Rows.Add(line_Array);
+                }
+            }
         }
-        private void print_DaraGredViews_itbcsv(DateTime time)
+        private void print_DataGridViews_itbcsv(DateTime time)
         {
-           // NVC_itbcsv.Get(time.ToString());
+            dataGridView_itbcsv.Rows.Clear();
+        
+            String lines = NVC_itbcsv.Get(time.ToString());
+            //split lines to line by ","
+            if (lines != null)
+            {
+                string[] lines_Array = lines.Split(',');
+                foreach (var line in lines_Array)
+                {
+                    string[] line_Array = line.Split('/');
+                    dataGridView_itbcsv.Rows.Add(line_Array);
+                }
+            }
         }
+
 
         /* ================================================
          * ==============    Initialize    ================
@@ -123,9 +177,11 @@ namespace itb_mapping_UI
         }
         private void _TimersTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            //CurrentPosition.Text = axWindowsMediaPlayer1.Ctlcontrols.currentPosition.ToString();
+            CurrentPosition.Text = axWindowsMediaPlayer1.Ctlcontrols.currentPosition.ToString();
             i++;
             CurrentPosition.Text = i.ToString();
+            dataGridView_avicsv.Rows.Clear();
+            dataGridView_itbcsv.Rows.Clear();
             //throw new NotImplementedException();
         }
         /* ================================================
@@ -134,7 +190,7 @@ namespace itb_mapping_UI
         private void ReadLine_And_AddIntoNVC(string filepath, NameValueCollection NVC, Action<string, NameValueCollection> AddIntoNVC) {
             try
             {
-                using (StreamReader SR = new StreamReader(filepath))
+                using (StreamReader SR = new StreamReader(filepath, System.Text.Encoding.GetEncoding(950)) )
                 {
 
                     string Line;
@@ -162,19 +218,26 @@ namespace itb_mapping_UI
         {
 
             int timeIdx = 0;
-            string time = splitline(line, timeIdx).Split('.')[0];
-            //string time = init_datetime(splitline(line, timeIdx));
+            string time = splitline(line, timeIdx,',').Split('.')[0];
+            //00:00:07
+            string[] time_array = time.Split(':');
+            DateTime time_avicsv = new DateTime();
+            time_avicsv = InitTime;
+            time_avicsv = time_avicsv.AddHours(Convert.ToDouble(time_array[0]));
+            time_avicsv=time_avicsv.AddMinutes(Convert.ToDouble(time_array[1]));
+            time_avicsv=time_avicsv.AddSeconds(Convert.ToDouble(time_array[2]));
             // add(key,vaule) into NVC
             // key = time , value = line
-            NVC.Add(time, line);
+            NVC.Add(time_avicsv.ToString(), line);
         }
 
         private void AddIntoNVC_itbcsv(string line, NameValueCollection NVC)
         {
             int startTimeIdx = 3;
             int endTimeIdx = 4;
-            string starttime = splitline(line, startTimeIdx);
-            string endtime = splitline(line, endTimeIdx);
+            char SplitChar = '/';
+            string starttime = splitline(line, startTimeIdx, SplitChar);
+            string endtime = splitline(line, endTimeIdx, SplitChar);
             //string starttime_UnMSec = init_datetime(String.Copy(starttime.Split('.')[0]));
             //string endtime_UnMSec = init_datetime(String.Copy(endtime.Split('.')[0]));
             string starttime_UnMSec = init_datetime(starttime);
@@ -198,9 +261,9 @@ namespace itb_mapping_UI
             }
         }
 
-        private string splitline(string line, int index)
+        private string splitline(string line, int index,char SplitChar)
         {
-            string[] ReadLine_Array = line.Split(',');
+            string[] ReadLine_Array = line.Split(SplitChar);
             return ReadLine_Array[index];
         }
         private bool is_time_LessThanOrEqual(string start, string end)
