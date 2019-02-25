@@ -17,6 +17,8 @@ namespace itb_mapping_UI
 {
     public partial class Form_MappingInterface : Form
     {
+        NameValueCollection NVC_avicsv = new NameValueCollection();
+        NameValueCollection NVC_itbcsv = new NameValueCollection();
         private System.Timers.Timer _TimersTimer;
         int i = 0;
         public Form_MappingInterface(string filepath_avi, string filepath_avicsv, string filepath_itbcsv,DateTime StartTime)
@@ -32,15 +34,38 @@ namespace itb_mapping_UI
             InitializeComponent();
             Initialize_timer();
             Initialize_axWindowsMediaPlayer(filepath_avi);
-            //AVI_CSV Initial setting
+            //Initial AVI_CSV setting & ITB_CSV setting
             Initialize_file_avicsv(filepath_avicsv);
-            //ITB_CSV Initial setting
             Initialize_file_itbcsv(filepath_itbcsv);
             //datagredview_avicsv Initial setting
             //Initialize_datagredview_avicsv();
             //datagredview_itbcsv Initial setting
             //Initialize_datagredview_itbcsv();
         }
+        /* ================================================
+         * ============    add new things    ==============
+         * ================================================*/
+
+        private void Initialize_datagredview_avicsv()
+        {
+            //get time now
+            //initial time
+            //print data form initial_time
+
+        }
+        private void print_DaraGredViews_all(DateTime time) {
+            print_DaraGredViews_avicsv(time);
+            print_DaraGredViews_itbcsv(time);
+        }
+        private void print_DaraGredViews_avicsv(DateTime time)
+        {
+            //NVC_avicsv.Get(time.ToString());
+        }
+        private void print_DaraGredViews_itbcsv(DateTime time)
+        {
+           // NVC_itbcsv.Get(time.ToString());
+        }
+
         /* ================================================
          * ==============    Initialize    ================
          * ================================================*/
@@ -59,7 +84,7 @@ namespace itb_mapping_UI
         private void Initialize_file_avicsv(string filepath) {
             try
             {
-                NameValueCollection NVC_avicsv = new NameValueCollection();
+                //NameValueCollection NVC_avicsv = new NameValueCollection();
                 ReadLine_And_AddIntoNVC(filepath, NVC_avicsv, AddIntoNVC_avicsv);
             }
             catch (NullReferenceException)
@@ -79,7 +104,7 @@ namespace itb_mapping_UI
         {
             try
             {
-                NameValueCollection NVC_itbcsv = new NameValueCollection();
+                //NameValueCollection NVC_itbcsv = new NameValueCollection();
                 ReadLine_And_AddIntoNVC(filepath, NVC_itbcsv, AddIntoNVC_itbcsv);
 
             }
