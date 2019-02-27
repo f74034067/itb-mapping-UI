@@ -33,6 +33,7 @@ namespace itb_mapping_UI
             //StartTime = "2018/10/4 下午 03:00:07"
             InitTime = StartTime;
             InitializeComponent();
+            label_starttime.Text = "start time:" + InitTime.ToString();
             Initialize_timer();
             Initialize_axWindowsMediaPlayer(filepath_avi);
             //Initial AVI_CSV setting & ITB_CSV setting
@@ -45,80 +46,6 @@ namespace itb_mapping_UI
         /* ================================================
          * ============    add new things    ==============
          * ================================================*/
-
-        private void Initialize_datagridview_avicsv(DateTime StartTime)
-        {
-            setup_datagridview_avicsv();
-            //initial time = StartTime
-            //print data form initial_time
-            print_DataGridViews_avicsv(StartTime);                        
-        }
-        private void Initialize_datagridview_itbcsv(DateTime StartTime)
-        {
-            setup_datagridview_itbcsv();
-            //initial time = StartTime
-            //print data form initial_time
-            print_DataGridViews_itbcsv(StartTime);
-                    }
-        private void setup_datagridview_avicsv()
-        {
-            dataGridView_avicsv.ColumnCount = 6;
-            dataGridView_avicsv.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView_avicsv.Font, FontStyle.Bold);
-            dataGridView_avicsv.Columns[0].Name = "Vedio Time";
-            dataGridView_avicsv.Columns[1].Name = "Object ID";
-            dataGridView_avicsv.Columns[2].Name = "Time into";
-            dataGridView_avicsv.Columns[3].Name = "Time leave";
-            dataGridView_avicsv.Columns[4].Name = "Lane(in/out)";
-            dataGridView_avicsv.Columns[5].Name = "Vehicle Type";
-        }
-        private void setup_datagridview_itbcsv()
-        {
-            dataGridView_itbcsv.ColumnCount = 7;
-            dataGridView_itbcsv.Columns[0].Name = "ID";
-            dataGridView_itbcsv.Columns[1].Name = "ITB ID";
-            dataGridView_itbcsv.Columns[2].Name = "MAC Address";
-            dataGridView_itbcsv.Columns[3].Name = "Start Time";
-            dataGridView_itbcsv.Columns[4].Name = "MaxRSSI Time";
-            dataGridView_itbcsv.Columns[5].Name = "Max RSSI";
-            dataGridView_itbcsv.Columns[6].Name = "Avg RSSI";
-        }
-        private void print_DaraGridViews_all(DateTime time) {
-            print_DataGridViews_avicsv(time);
-            print_DataGridViews_itbcsv(time);
-        }
-
-        private void print_DataGridViews_avicsv(DateTime time)
-        {
-            dataGridView_avicsv.Rows.Clear();
-            String lines = NVC_avicsv.Get(time.ToString());
-            //split lines to line by ","
-            if (lines != null)
-            {
-                string[] lines_Array = lines.Split(',');
-                foreach (var line in lines_Array)
-                {
-                    string[] line_Array = line.Split('/');
-                    dataGridView_avicsv.Rows.Add(line_Array);
-                }
-            }
-        }
-        private void print_DataGridViews_itbcsv(DateTime time)
-        {
-            dataGridView_itbcsv.Rows.Clear();
-        
-            String lines = NVC_itbcsv.Get(time.ToString());
-            //split lines to line by ","
-            if (lines != null)
-            {
-                string[] lines_Array = lines.Split(',');
-                foreach (var line in lines_Array)
-                {
-                    string[] line_Array = line.Split('/');
-                    dataGridView_itbcsv.Rows.Add(line_Array);
-                }
-            }
-        }
-
 
         /* ================================================
          * ==============    Initialize    ================
@@ -175,17 +102,23 @@ namespace itb_mapping_UI
             }
 
         }
-        private void _TimersTimer_Elapsed(object sender, ElapsedEventArgs e)
+        private void Initialize_datagridview_avicsv(DateTime StartTime)
         {
-            CurrentPosition.Text = axWindowsMediaPlayer1.Ctlcontrols.currentPosition.ToString();
-            i++;
-            CurrentPosition.Text = i.ToString();
-            dataGridView_avicsv.Rows.Clear();
-            dataGridView_itbcsv.Rows.Clear();
-            //throw new NotImplementedException();
+            setup_datagridview_avicsv();
+            //initial time = StartTime
+            //print data form initial_time
+            print_DataGridViews_avicsv(StartTime);
         }
+        private void Initialize_datagridview_itbcsv(DateTime StartTime)
+        {
+            setup_datagridview_itbcsv();
+            //initial time = StartTime
+            //print data form initial_time
+            print_DataGridViews_itbcsv(StartTime);
+        }
+
         /* ================================================
-         * =============    file_handle    ================
+         * =============    File Handle    ================
          * ================================================*/
         private void ReadLine_And_AddIntoNVC(string filepath, NameValueCollection NVC, Action<string, NameValueCollection> AddIntoNVC) {
             try
@@ -304,6 +237,75 @@ namespace itb_mapping_UI
             DateTime date_time = DateTime.Parse(time);
             return date_time.ToString();
         }
+
+        /* ================================================
+        * =============    DataGridView    ===============
+        * ================================================*/
+        private void setup_datagridview_avicsv()
+        {
+            dataGridView_avicsv.ColumnCount = 6;
+            dataGridView_avicsv.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView_avicsv.Font, FontStyle.Bold);
+            dataGridView_avicsv.Columns[0].Name = "Vedio Time";
+            dataGridView_avicsv.Columns[1].Name = "Object ID";
+            dataGridView_avicsv.Columns[2].Name = "Time enter";
+            dataGridView_avicsv.Columns[3].Name = "Time leave";
+            dataGridView_avicsv.Columns[4].Name = "Lane(in/out)";
+            dataGridView_avicsv.Columns[5].Name = "Vehicle Type";
+        }
+        private void setup_datagridview_itbcsv()
+        {
+            dataGridView_itbcsv.ColumnCount = 7;
+            dataGridView_itbcsv.Columns[0].Name = "ID";
+            dataGridView_itbcsv.Columns[1].Name = "ITB ID";
+            dataGridView_itbcsv.Columns[2].Name = "MAC Address";
+            dataGridView_itbcsv.Columns[3].Name = "Start Time";
+            dataGridView_itbcsv.Columns[4].Name = "MaxRSSI Time";
+            dataGridView_itbcsv.Columns[5].Name = "Max RSSI";
+            dataGridView_itbcsv.Columns[6].Name = "Avg RSSI";
+        }
+        private void clear_DaraGridViews_all()
+        {
+            dataGridView_avicsv.Rows.Clear();
+            dataGridView_itbcsv.Rows.Clear();
+        }
+        private void print_DaraGridViews_all(DateTime time)
+        {
+            print_DataGridViews_avicsv(time);
+            print_DataGridViews_itbcsv(time);
+        }
+
+        private void print_DataGridViews_avicsv(DateTime time)
+        {
+            dataGridView_avicsv.Rows.Clear();
+            String lines = NVC_avicsv.Get(time.ToString());
+            //split lines to line by ","
+            if (lines != null)
+            {
+                string[] lines_Array = lines.Split(',');
+                foreach (var line in lines_Array)
+                {
+                    string[] line_Array = line.Split('/');
+                    dataGridView_avicsv.Rows.Add(line_Array);
+                }
+            }
+        }
+        private void print_DataGridViews_itbcsv(DateTime time)
+        {
+            dataGridView_itbcsv.Rows.Clear();
+
+            String lines = NVC_itbcsv.Get(time.ToString());
+            //split lines to line by ","
+            if (lines != null)
+            {
+                string[] lines_Array = lines.Split(',');
+                foreach (var line in lines_Array)
+                {
+                    string[] line_Array = line.Split('/');
+                    dataGridView_itbcsv.Rows.Add(line_Array);
+                }
+            }
+        }
+
         /* ================================================
          * ================    button    ==================
          * ================================================*/
@@ -315,6 +317,7 @@ namespace itb_mapping_UI
         {
             axWindowsMediaPlayer1.Ctlcontrols.pause();
         }
+
         /* ================================================
          * ============    axwindowplayer    ==============
          * ================================================*/
@@ -323,6 +326,7 @@ namespace itb_mapping_UI
             //MessageBox.Show("axWindowsMediaPlayer1_PositionChange");
             //this._TimersTimer.Start();
             //更新datagredview
+            shownow_DataGridViews();
         }
         private void axWindowsMediaPlayer1_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
@@ -332,12 +336,15 @@ namespace itb_mapping_UI
                 {
                     case WMPLib.WMPPlayState.wmppsPlaying:
                         this._TimersTimer.Start();
+                        shownow_DataGridViews();
                         break;
                     case WMPLib.WMPPlayState.wmppsPaused:
                         this._TimersTimer.Stop();
                         break;
                     case WMPLib.WMPPlayState.wmppsStopped:
                         this._TimersTimer.Stop();
+                        clear_DaraGridViews_all();
+                        print_DaraGridViews_all(InitTime);
                         break;
                     default:
                         break;
@@ -347,6 +354,22 @@ namespace itb_mapping_UI
             {
                 MessageBox.Show("axWindowsMediaPlayer1_PlayStateChange:" + ex.Message);
             }
+        }
+        private void _TimersTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            //		axWindowsMediaPlayer1.Ctlcontrols.currentPosition	1.6371222	double
+            CurrentPosition.Text = axWindowsMediaPlayer1.Ctlcontrols.currentPosition.ToString();
+            /*
+            i++;
+            CurrentPosition.Text = i.ToString();
+            */
+            shownow_DataGridViews();
+        }
+        private void shownow_DataGridViews() {
+            DateTime nowtime = InitTime;
+            nowtime = nowtime.AddSeconds(axWindowsMediaPlayer1.Ctlcontrols.currentPosition);
+            clear_DaraGridViews_all();
+            print_DaraGridViews_all(nowtime);
         }
     }
 }

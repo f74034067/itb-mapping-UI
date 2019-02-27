@@ -36,6 +36,7 @@
             this.dataGridView_avicsv = new System.Windows.Forms.DataGridView();
             this.dataGridView_itbcsv = new System.Windows.Forms.DataGridView();
             this.CurrentPosition = new System.Windows.Forms.TextBox();
+            this.label_starttime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_avicsv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_itbcsv)).BeginInit();
@@ -71,7 +72,7 @@
             this.button_stop.Name = "button_stop";
             this.button_stop.Size = new System.Drawing.Size(80, 26);
             this.button_stop.TabIndex = 4;
-            this.button_stop.Text = "Stop";
+            this.button_stop.Text = "Pause";
             this.button_stop.UseVisualStyleBackColor = true;
             this.button_stop.Click += new System.EventHandler(this.button_Stop);
             // 
@@ -107,17 +108,28 @@
             // 
             // CurrentPosition
             // 
-            this.CurrentPosition.Location = new System.Drawing.Point(16, 10);
+            this.CurrentPosition.Enabled = false;
+            this.CurrentPosition.Location = new System.Drawing.Point(34, 738);
             this.CurrentPosition.Margin = new System.Windows.Forms.Padding(4);
             this.CurrentPosition.Name = "CurrentPosition";
             this.CurrentPosition.Size = new System.Drawing.Size(79, 25);
             this.CurrentPosition.TabIndex = 7;
+            // 
+            // label_starttime
+            // 
+            this.label_starttime.AutoSize = true;
+            this.label_starttime.Location = new System.Drawing.Point(120, 744);
+            this.label_starttime.Name = "label_starttime";
+            this.label_starttime.Size = new System.Drawing.Size(68, 15);
+            this.label_starttime.TabIndex = 8;
+            this.label_starttime.Text = "start time :";
             // 
             // Form_MappingInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 765);
+            this.Controls.Add(this.label_starttime);
             this.Controls.Add(this.CurrentPosition);
             this.Controls.Add(this.dataGridView_itbcsv);
             this.Controls.Add(this.dataGridView_avicsv);
@@ -145,6 +157,7 @@
         private System.Windows.Forms.DataGridView dataGridView_avicsv;
         private System.Windows.Forms.DataGridView dataGridView_itbcsv;
         private System.Windows.Forms.TextBox CurrentPosition;
+        private System.Windows.Forms.Label label_starttime;
     }
 }
 
