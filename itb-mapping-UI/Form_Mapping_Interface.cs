@@ -127,7 +127,7 @@ namespace itb_mapping_UI
                 {
 
                     string Line;
-                    while ((Line = SR.ReadLine()) != null)
+                    while ((Line = SR.ReadLine())!=null && Line != "")
                     {
                         //dothings
                         AddIntoNVC(Line, NVC);
