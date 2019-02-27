@@ -37,6 +37,7 @@
             this.dataGridView_itbcsv = new System.Windows.Forms.DataGridView();
             this.CurrentPosition = new System.Windows.Forms.TextBox();
             this.label_starttime = new System.Windows.Forms.Label();
+            this.label_is_readfile = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_avicsv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_itbcsv)).BeginInit();
@@ -124,11 +125,21 @@
             this.label_starttime.TabIndex = 8;
             this.label_starttime.Text = "start time :";
             // 
+            // label_is_readfile
+            // 
+            this.label_is_readfile.AutoSize = true;
+            this.label_is_readfile.Location = new System.Drawing.Point(23, 9);
+            this.label_is_readfile.Name = "label_is_readfile";
+            this.label_is_readfile.Size = new System.Drawing.Size(141, 15);
+            this.label_is_readfile.TabIndex = 9;
+            this.label_is_readfile.Text = "read file : not done yet!";
+            // 
             // Form_MappingInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 765);
+            this.Controls.Add(this.label_is_readfile);
             this.Controls.Add(this.label_starttime);
             this.Controls.Add(this.CurrentPosition);
             this.Controls.Add(this.dataGridView_itbcsv);
@@ -158,6 +169,7 @@
         private System.Windows.Forms.DataGridView dataGridView_itbcsv;
         private System.Windows.Forms.TextBox CurrentPosition;
         private System.Windows.Forms.Label label_starttime;
+        private System.Windows.Forms.Label label_is_readfile;
     }
 }
 

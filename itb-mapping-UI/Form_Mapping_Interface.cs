@@ -42,6 +42,7 @@ namespace itb_mapping_UI
             //datagredview_avicsv Initial setting & datagredview_itbcsv Initial setting
             Initialize_datagridview_avicsv(InitTime);
             Initialize_datagridview_itbcsv(InitTime);
+            label_is_readfile.Text = "read file : done!";
         }
         /* ================================================
          * ============    add new things    ==============
