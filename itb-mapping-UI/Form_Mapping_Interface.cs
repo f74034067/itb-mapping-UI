@@ -21,7 +21,7 @@ namespace itb_mapping_UI
         NameValueCollection NVC_itbcsv = new NameValueCollection();
         DateTime InitTime = new DateTime();
         private System.Timers.Timer _TimersTimer;
-        int i = 0;
+        //int i = 0;
         public Form_MappingInterface(string filepath_avi, string filepath_avicsv, string filepath_itbcsv,DateTime StartTime)
         {
             // show file path
@@ -52,7 +52,7 @@ namespace itb_mapping_UI
          * ================================================*/
         private void Initialize_timer() {
             this._TimersTimer = new System.Timers.Timer();
-            this._TimersTimer.Interval = 1000;
+            this._TimersTimer.Interval = 300;
             this._TimersTimer.SynchronizingObject = this;
             this._TimersTimer.Elapsed += new System.Timers.ElapsedEventHandler(_TimersTimer_Elapsed);
         }
@@ -336,7 +336,7 @@ namespace itb_mapping_UI
                 {
                     case WMPLib.WMPPlayState.wmppsPlaying:
                         this._TimersTimer.Start();
-                        shownow_DataGridViews();
+                        //shownow_DataGridViews();
                         break;
                     case WMPLib.WMPPlayState.wmppsPaused:
                         this._TimersTimer.Stop();
@@ -357,17 +357,17 @@ namespace itb_mapping_UI
         }
         private void _TimersTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
+            /*
+                i++;
+                CurrentPosition.Text = i.ToString();
+            */
             //		axWindowsMediaPlayer1.Ctlcontrols.currentPosition	1.6371222	double
             CurrentPosition.Text = axWindowsMediaPlayer1.Ctlcontrols.currentPosition.ToString();
-            /*
-            i++;
-            CurrentPosition.Text = i.ToString();
-            */
             shownow_DataGridViews();
         }
         private void shownow_DataGridViews() {
-            DateTime nowtime = InitTime;
-            nowtime = nowtime.AddSeconds(axWindowsMediaPlayer1.Ctlcontrols.currentPosition);
+            DateTime nowtime = InitTime.AddSeconds(axWindowsMediaPlayer1.Ctlcontrols.currentPosition); ;
+            //nowtime = nowtime.AddSeconds(axWindowsMediaPlayer1.Ctlcontrols.currentPosition);
             clear_DaraGridViews_all();
             print_DaraGridViews_all(nowtime);
         }
