@@ -82,7 +82,7 @@ namespace itb_mapping_UI
                 dropdownlist_min.SelectedItem.ToString() +
                 dropdownlist_sec.SelectedItem.ToString();
              StartTime = DateTime.ParseExact(dropdownlist_datatime, "yyyy年MM月dd日HH時mm分ss秒", provider);
- 
+             StartTime = DateTime.ParseExact("2018年10月04日15時00分06秒", "yyyy年MM月dd日HH時mm分ss秒", provider);
             /* StartTime = DateTime.ParseExact(dropdownlist_year.SelectedItem.ToString(),"yyyy年", provider);
              StartTime = DateTime.ParseExact(dropdownlist_month.SelectedItem.ToString(), "MM月", provider);
              StartTime = DateTime.ParseExact(dropdownlist_days.SelectedItem.ToString(), "dd日", provider);

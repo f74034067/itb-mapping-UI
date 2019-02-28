@@ -246,23 +246,42 @@ namespace itb_mapping_UI
         {
             dataGridView_avicsv.ColumnCount = 6;
             dataGridView_avicsv.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView_avicsv.Font, FontStyle.Bold);
+            // set name
             dataGridView_avicsv.Columns[0].Name = "Vedio Time";
             dataGridView_avicsv.Columns[1].Name = "Object ID";
             dataGridView_avicsv.Columns[2].Name = "Time enter";
             dataGridView_avicsv.Columns[3].Name = "Time leave";
             dataGridView_avicsv.Columns[4].Name = "Lane(in/out)";
             dataGridView_avicsv.Columns[5].Name = "Vehicle Type";
+            // set width
+            dataGridView_avicsv.Columns[0].Width = 70;
+            dataGridView_avicsv.Columns[1].Width = 50;
+            dataGridView_avicsv.Columns[2].Width = 70;
+            dataGridView_avicsv.Columns[3].Width = 70;
+            dataGridView_avicsv.Columns[4].Width = 80;
+            dataGridView_avicsv.Columns[5].Width = 60;
         }
         private void setup_datagridview_itbcsv()
         {
-            dataGridView_itbcsv.ColumnCount = 7;
+            dataGridView_itbcsv.ColumnCount = 8;
+            // set name
             dataGridView_itbcsv.Columns[0].Name = "ID";
             dataGridView_itbcsv.Columns[1].Name = "ITB ID";
             dataGridView_itbcsv.Columns[2].Name = "MAC Address";
-            dataGridView_itbcsv.Columns[3].Name = "Start Time";
-            dataGridView_itbcsv.Columns[4].Name = "MaxRSSI Time";
-            dataGridView_itbcsv.Columns[5].Name = "Max RSSI";
-            dataGridView_itbcsv.Columns[6].Name = "Avg RSSI";
+            dataGridView_itbcsv.Columns[3].Name = "First Time";
+            dataGridView_itbcsv.Columns[4].Name = "Last Time";
+            dataGridView_itbcsv.Columns[5].Name = "MaxRSSI Time";
+            dataGridView_itbcsv.Columns[6].Name = "Max RSSI";
+            dataGridView_itbcsv.Columns[7].Name = "Avg RSSI";
+            // set width
+            dataGridView_itbcsv.Columns[0].Width = 30;
+            dataGridView_itbcsv.Columns[1].Width = 65;
+            dataGridView_itbcsv.Columns[2].Width = 95;
+            dataGridView_itbcsv.Columns[3].Width = 150;
+            dataGridView_itbcsv.Columns[4].Width = 150;
+            dataGridView_itbcsv.Columns[5].Width = 150;
+            dataGridView_itbcsv.Columns[6].Width = 90;
+            dataGridView_itbcsv.Columns[7].Width = 90;
         }
         private void clear_DaraGridViews_all()
         {
@@ -368,9 +387,31 @@ namespace itb_mapping_UI
         }
         private void shownow_DataGridViews() {
             DateTime nowtime = InitTime.AddSeconds(axWindowsMediaPlayer1.Ctlcontrols.currentPosition); ;
-            //nowtime = nowtime.AddSeconds(axWindowsMediaPlayer1.Ctlcontrols.currentPosition);
+            // nowtime = nowtime.AddSeconds(axWindowsMediaPlayer1.Ctlcontrols.currentPosition);
             clear_DaraGridViews_all();
             print_DaraGridViews_all(nowtime);
         }
+
+        private void button_add_Click(object sender, EventArgs e)
+        {
+            // check datagridview_avicsv choose is valid
+            if (isvalid_avichoose())
+            {
+                // check datagridview_itbcsv choose is valid
+                if (isvalid_avichoose())
+                {
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please choose data in DataGridView!");
+            }
+
+        }
+        private bool isvalid_avichoose() {
+            return false;
+        }
+
     }
 }
