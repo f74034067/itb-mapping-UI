@@ -50,6 +50,7 @@
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
             this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(19, 22);
+            this.axWindowsMediaPlayer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(472, 299);
@@ -59,9 +60,10 @@
             // 
             // button_play
             // 
-            this.button_play.Location = new System.Drawing.Point(17, 327);
+            this.button_play.Location = new System.Drawing.Point(23, 409);
+            this.button_play.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_play.Name = "button_play";
-            this.button_play.Size = new System.Drawing.Size(60, 21);
+            this.button_play.Size = new System.Drawing.Size(80, 26);
             this.button_play.TabIndex = 3;
             this.button_play.Text = "Play";
             this.button_play.UseVisualStyleBackColor = true;
@@ -69,9 +71,10 @@
             // 
             // button_pause
             // 
-            this.button_pause.Location = new System.Drawing.Point(83, 327);
+            this.button_pause.Location = new System.Drawing.Point(111, 409);
+            this.button_pause.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_pause.Name = "button_pause";
-            this.button_pause.Size = new System.Drawing.Size(60, 21);
+            this.button_pause.Size = new System.Drawing.Size(80, 26);
             this.button_pause.TabIndex = 4;
             this.button_pause.Text = "Pause";
             this.button_pause.UseVisualStyleBackColor = true;
@@ -81,70 +84,74 @@
             // 
             this.dataGridView_avicsv.AllowUserToAddRows = false;
             this.dataGridView_avicsv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_avicsv.Location = new System.Drawing.Point(532, 22);
-            this.dataGridView_avicsv.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView_avicsv.Location = new System.Drawing.Point(709, 28);
+            this.dataGridView_avicsv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView_avicsv.MultiSelect = false;
             this.dataGridView_avicsv.Name = "dataGridView_avicsv";
             this.dataGridView_avicsv.ReadOnly = true;
             this.dataGridView_avicsv.RowTemplate.Height = 27;
             this.dataGridView_avicsv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_avicsv.Size = new System.Drawing.Size(484, 299);
+            this.dataGridView_avicsv.Size = new System.Drawing.Size(645, 374);
             this.dataGridView_avicsv.TabIndex = 5;
             // 
             // dataGridView_itbcsv
             // 
             this.dataGridView_itbcsv.AllowUserToAddRows = false;
             this.dataGridView_itbcsv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_itbcsv.Location = new System.Drawing.Point(19, 353);
-            this.dataGridView_itbcsv.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView_itbcsv.Location = new System.Drawing.Point(25, 441);
+            this.dataGridView_itbcsv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView_itbcsv.MultiSelect = false;
             this.dataGridView_itbcsv.Name = "dataGridView_itbcsv";
             this.dataGridView_itbcsv.ReadOnly = true;
             this.dataGridView_itbcsv.RowTemplate.Height = 27;
             this.dataGridView_itbcsv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_itbcsv.Size = new System.Drawing.Size(997, 204);
+            this.dataGridView_itbcsv.Size = new System.Drawing.Size(1329, 255);
             this.dataGridView_itbcsv.TabIndex = 6;
             // 
             // CurrentPosition
             // 
             this.CurrentPosition.Enabled = false;
-            this.CurrentPosition.Location = new System.Drawing.Point(17, 761);
+            this.CurrentPosition.Location = new System.Drawing.Point(23, 951);
+            this.CurrentPosition.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CurrentPosition.Name = "CurrentPosition";
-            this.CurrentPosition.Size = new System.Drawing.Size(60, 22);
+            this.CurrentPosition.Size = new System.Drawing.Size(79, 25);
             this.CurrentPosition.TabIndex = 7;
             // 
             // label_starttime
             // 
             this.label_starttime.AutoSize = true;
-            this.label_starttime.Location = new System.Drawing.Point(81, 773);
-            this.label_starttime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_starttime.Location = new System.Drawing.Point(108, 966);
             this.label_starttime.Name = "label_starttime";
-            this.label_starttime.Size = new System.Drawing.Size(53, 12);
+            this.label_starttime.Size = new System.Drawing.Size(68, 15);
             this.label_starttime.TabIndex = 8;
             this.label_starttime.Text = "start time :";
             // 
             // label_is_readfile
             // 
             this.label_is_readfile.AutoSize = true;
-            this.label_is_readfile.Location = new System.Drawing.Point(81, 754);
-            this.label_is_readfile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_is_readfile.Location = new System.Drawing.Point(108, 942);
             this.label_is_readfile.Name = "label_is_readfile";
-            this.label_is_readfile.Size = new System.Drawing.Size(114, 12);
+            this.label_is_readfile.Size = new System.Drawing.Size(141, 15);
             this.label_is_readfile.TabIndex = 9;
             this.label_is_readfile.Text = "read file : not done yet!";
             // 
             // dataGridView_combine
             // 
             this.dataGridView_combine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_combine.Location = new System.Drawing.Point(17, 592);
+            this.dataGridView_combine.Location = new System.Drawing.Point(23, 740);
+            this.dataGridView_combine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView_combine.Name = "dataGridView_combine";
             this.dataGridView_combine.RowTemplate.Height = 24;
-            this.dataGridView_combine.Size = new System.Drawing.Size(997, 174);
+            this.dataGridView_combine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_combine.Size = new System.Drawing.Size(1329, 218);
             this.dataGridView_combine.TabIndex = 10;
             // 
             // button_add
             // 
-            this.button_add.Location = new System.Drawing.Point(365, 327);
+            this.button_add.Location = new System.Drawing.Point(487, 409);
+            this.button_add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(60, 21);
+            this.button_add.Size = new System.Drawing.Size(80, 26);
             this.button_add.TabIndex = 11;
             this.button_add.Text = "Add";
             this.button_add.UseVisualStyleBackColor = true;
@@ -152,18 +159,19 @@
             // 
             // button_delete
             // 
-            this.button_delete.Location = new System.Drawing.Point(431, 327);
+            this.button_delete.Location = new System.Drawing.Point(575, 409);
+            this.button_delete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(60, 21);
+            this.button_delete.Size = new System.Drawing.Size(80, 26);
             this.button_delete.TabIndex = 12;
             this.button_delete.Text = "Delete";
             this.button_delete.UseVisualStyleBackColor = true;
             // 
             // Form_MappingInterface
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 794);
+            this.ClientSize = new System.Drawing.Size(1429, 1055);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_add);
             this.Controls.Add(this.dataGridView_combine);
@@ -175,6 +183,7 @@
             this.Controls.Add(this.button_pause);
             this.Controls.Add(this.button_play);
             this.Controls.Add(this.axWindowsMediaPlayer1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form_MappingInterface";
             this.Text = "Mapping interface";
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();

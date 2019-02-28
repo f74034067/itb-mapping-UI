@@ -42,6 +42,7 @@ namespace itb_mapping_UI
             //datagredview_avicsv Initial setting & datagredview_itbcsv Initial setting
             Initialize_datagridview_avicsv(InitTime);
             Initialize_datagridview_itbcsv(InitTime);
+            Initialize_datagridview_combine();
             label_is_readfile.Text = "read file : done!";
         }
         /* ================================================
@@ -116,6 +117,10 @@ namespace itb_mapping_UI
             //initial time = StartTime
             //print data form initial_time
             print_DataGridViews_itbcsv(StartTime);
+        }
+        private void Initialize_datagridview_combine()
+        {
+            setup_datagridview_combine();
         }
 
         /* ================================================
@@ -283,6 +288,40 @@ namespace itb_mapping_UI
             dataGridView_itbcsv.Columns[6].Width = 90;
             dataGridView_itbcsv.Columns[7].Width = 90;
         }
+        private void setup_datagridview_combine()
+        {
+            dataGridView_combine.ColumnCount = 14;
+            // set name
+            dataGridView_combine.Columns[0].Name = "Vedio Time";
+            dataGridView_combine.Columns[1].Name = "Object ID";
+            dataGridView_combine.Columns[2].Name = "Time enter";
+            dataGridView_combine.Columns[3].Name = "Time leave";
+            dataGridView_combine.Columns[4].Name = "Lane(in/out)";
+            dataGridView_combine.Columns[5].Name = "Vehicle Type";
+            dataGridView_combine.Columns[6].Name = "ID";
+            dataGridView_combine.Columns[7].Name = "ITB ID";
+            dataGridView_combine.Columns[8].Name = "MAC Address";
+            dataGridView_combine.Columns[9].Name = "First Time";
+            dataGridView_combine.Columns[10].Name = "Last Time";
+            dataGridView_combine.Columns[11].Name = "MaxRSSI Time";
+            dataGridView_combine.Columns[12].Name = "Max RSSI";
+            dataGridView_combine.Columns[13].Name = "Avg RSSI";
+            // set width
+            dataGridView_combine.Columns[0].Width = 70;
+            dataGridView_combine.Columns[1].Width = 50;
+            dataGridView_combine.Columns[2].Width = 70;
+            dataGridView_combine.Columns[3].Width = 70;
+            dataGridView_combine.Columns[4].Width = 80;
+            dataGridView_combine.Columns[5].Width = 60;
+            dataGridView_combine.Columns[6].Width = 30;
+            dataGridView_combine.Columns[7].Width = 65;
+            dataGridView_combine.Columns[8].Width = 95;
+            dataGridView_combine.Columns[9].Width = 150;
+            dataGridView_combine.Columns[10].Width = 150;
+            dataGridView_combine.Columns[11].Width = 150;
+            dataGridView_combine.Columns[12].Width = 90;
+            dataGridView_combine.Columns[13].Width = 90;
+        }
         private void clear_DaraGridViews_all()
         {
             dataGridView_avicsv.Rows.Clear();
@@ -395,13 +434,17 @@ namespace itb_mapping_UI
         private void button_add_Click(object sender, EventArgs e)
         {
             // check datagridview_avicsv choose is valid
-            if (isvalid_avichoose())
+            // check datagridview_itbcsv choose is valid
+            if (is_choose_valid(dataGridView_avicsv) && is_choose_valid(dataGridView_itbcsv))
             {
-                // check datagridview_itbcsv choose is valid
-                if (isvalid_avichoose())
-                {
-
-                }
+                string avi_row = "";
+                string itb_row = "";
+                avi_row = get_row_string(dataGridView_avicsv);
+                itb_row = get_row_string(dataGridView_itbcsv);
+                string line = avi_row + "/"+itb_row;
+                string[] line_Array = line.Split('/');
+                dataGridView_combine.Rows.Add(line_Array);
+                MessageBox.Show(avi_row + itb_row);
             }
             else
             {
@@ -409,9 +452,25 @@ namespace itb_mapping_UI
             }
 
         }
-        private bool isvalid_avichoose() {
-            return false;
+        private bool is_choose_valid(DataGridView dgv) {
+            if (dgv.CurrentRow != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-
+        private string get_row_string(DataGridView dgv) {
+            // dataGridView_avicsv.Rows.Add(line_Array);
+            string row ="";
+            row+= dgv.Rows[dgv.CurrentRow.Index].Cells[0].Value.ToString();
+            for (int i = 1; i < dgv.ColumnCount; i++)
+            {
+               row += "/"+ dgv.Rows[dgv.CurrentRow.Index].Cells[i].Value.ToString();
+            }
+            return row;
+        }
     }
 }
