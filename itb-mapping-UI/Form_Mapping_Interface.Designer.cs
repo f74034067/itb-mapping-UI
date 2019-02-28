@@ -84,6 +84,7 @@
             // 
             this.dataGridView_avicsv.AllowUserToAddRows = false;
             this.dataGridView_avicsv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_avicsv.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dataGridView_avicsv.Location = new System.Drawing.Point(532, 22);
             this.dataGridView_avicsv.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView_avicsv.MultiSelect = false;
@@ -139,7 +140,7 @@
             // dataGridView_combine
             // 
             this.dataGridView_combine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_combine.Location = new System.Drawing.Point(19, 562);
+            this.dataGridView_combine.Location = new System.Drawing.Point(20, 562);
             this.dataGridView_combine.Name = "dataGridView_combine";
             this.dataGridView_combine.RowTemplate.Height = 24;
             this.dataGridView_combine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -168,6 +169,7 @@
             // 
             // textBox_savefile_path
             // 
+            this.textBox_savefile_path.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.textBox_savefile_path.Location = new System.Drawing.Point(560, 758);
             this.textBox_savefile_path.Name = "textBox_savefile_path";
             this.textBox_savefile_path.Size = new System.Drawing.Size(315, 22);
@@ -197,7 +199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 789);
+            this.ClientSize = new System.Drawing.Size(1072, 800);
             this.Controls.Add(this.button_save);
             this.Controls.Add(this.button_filepath);
             this.Controls.Add(this.textBox_savefile_path);
