@@ -45,9 +45,6 @@ namespace itb_mapping_UI
             Initialize_datagridview_combine();
             label_is_readfile.Text = "read file : done!";
         }
-        /* ================================================
-         * ============    add new things    ==============
-         * ================================================*/
 
         /* ================================================
          * ==============    Initialize    ================
@@ -376,7 +373,27 @@ namespace itb_mapping_UI
         {
             axWindowsMediaPlayer1.Ctlcontrols.pause();
         }
+        private void button_add_Click(object sender, EventArgs e)
+        {
+            // check datagridview_avicsv choose is valid
+            // check datagridview_itbcsv choose is valid
+            if (is_choose_valid(dataGridView_avicsv) && is_choose_valid(dataGridView_itbcsv))
+            {
+                string avi_row = "";
+                string itb_row = "";
+                avi_row = get_row_string(dataGridView_avicsv);
+                itb_row = get_row_string(dataGridView_itbcsv);
+                string line = avi_row + "/" + itb_row;
+                string[] line_Array = line.Split('/');
+                dataGridView_combine.Rows.Add(line_Array);
+                //MessageBox.Show(avi_row + itb_row);
+            }
+            else
+            {
+                MessageBox.Show("Please choose data in DataGridView!");
+            }
 
+        }
         /* ================================================
          * ============    axwindowplayer    ==============
          * ================================================*/
@@ -431,27 +448,10 @@ namespace itb_mapping_UI
             print_DaraGridViews_all(nowtime);
         }
 
-        private void button_add_Click(object sender, EventArgs e)
-        {
-            // check datagridview_avicsv choose is valid
-            // check datagridview_itbcsv choose is valid
-            if (is_choose_valid(dataGridView_avicsv) && is_choose_valid(dataGridView_itbcsv))
-            {
-                string avi_row = "";
-                string itb_row = "";
-                avi_row = get_row_string(dataGridView_avicsv);
-                itb_row = get_row_string(dataGridView_itbcsv);
-                string line = avi_row + "/"+itb_row;
-                string[] line_Array = line.Split('/');
-                dataGridView_combine.Rows.Add(line_Array);
-                MessageBox.Show(avi_row + itb_row);
-            }
-            else
-            {
-                MessageBox.Show("Please choose data in DataGridView!");
-            }
+        /* ================================================
+         * ==============    button_add    ================
+         * ================================================*/
 
-        }
         private bool is_choose_valid(DataGridView dgv) {
             if (dgv.CurrentRow != null)
             {
@@ -472,5 +472,8 @@ namespace itb_mapping_UI
             }
             return row;
         }
+        /* ================================================
+         * ============    add new things    ==============
+         * ================================================*/
     }
 }
