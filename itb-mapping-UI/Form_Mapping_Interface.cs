@@ -394,6 +394,28 @@ namespace itb_mapping_UI
             }
 
         }
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+            int row_count = this.dataGridView_combine.SelectedRows.Count;
+            if (this.dataGridView_combine.SelectedRows.Count == 0 ||
+                this.dataGridView_combine.SelectedRows[0].Index == this.dataGridView_combine.Rows.Count - 1)
+            {
+                MessageBox.Show("Please select at least 1 row in combine_csv !", "Please choose again");
+            }
+            else if (MessageBox.Show("Are you sure you want to delete " + row_count.ToString() + " rows ?", "Delete rows confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                int selectcount = dataGridView_combine.SelectedRows.Count;
+                while (selectcount > 0)
+                {
+                    if (!dataGridView_combine.SelectedRows[0].IsNewRow)
+                    {
+                        dataGridView_combine.Rows.RemoveAt(dataGridView_combine.SelectedRows[0].Index);
+                    }
+                    selectcount--;
+                }
+            }
+        }
+
         /* ================================================
          * ============    axwindowplayer    ==============
          * ================================================*/
@@ -472,8 +494,10 @@ namespace itb_mapping_UI
             }
             return row;
         }
+
         /* ================================================
          * ============    add new things    ==============
          * ================================================*/
+
     }
 }

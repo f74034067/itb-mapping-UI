@@ -40,6 +40,7 @@
             this.dataGridView_combine = new System.Windows.Forms.DataGridView();
             this.button_add = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
+            this.button_save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_avicsv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_itbcsv)).BeginInit();
@@ -82,7 +83,7 @@
             this.dataGridView_avicsv.AllowUserToAddRows = false;
             this.dataGridView_avicsv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_avicsv.Location = new System.Drawing.Point(532, 22);
-            this.dataGridView_avicsv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView_avicsv.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView_avicsv.MultiSelect = false;
             this.dataGridView_avicsv.Name = "dataGridView_avicsv";
             this.dataGridView_avicsv.ReadOnly = true;
@@ -96,7 +97,7 @@
             this.dataGridView_itbcsv.AllowUserToAddRows = false;
             this.dataGridView_itbcsv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_itbcsv.Location = new System.Drawing.Point(19, 353);
-            this.dataGridView_itbcsv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView_itbcsv.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView_itbcsv.MultiSelect = false;
             this.dataGridView_itbcsv.Name = "dataGridView_itbcsv";
             this.dataGridView_itbcsv.ReadOnly = true;
@@ -145,7 +146,7 @@
             // 
             // button_add
             // 
-            this.button_add.Location = new System.Drawing.Point(365, 327);
+            this.button_add.Location = new System.Drawing.Point(532, 326);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(60, 21);
             this.button_add.TabIndex = 11;
@@ -155,18 +156,29 @@
             // 
             // button_delete
             // 
-            this.button_delete.Location = new System.Drawing.Point(431, 327);
+            this.button_delete.Location = new System.Drawing.Point(608, 326);
             this.button_delete.Name = "button_delete";
             this.button_delete.Size = new System.Drawing.Size(60, 21);
             this.button_delete.TabIndex = 12;
             this.button_delete.Text = "Delete";
             this.button_delete.UseVisualStyleBackColor = true;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
+            // 
+            // button_save
+            // 
+            this.button_save.Location = new System.Drawing.Point(956, 327);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(60, 21);
+            this.button_save.TabIndex = 13;
+            this.button_save.Text = "Save";
+            this.button_save.UseVisualStyleBackColor = true;
             // 
             // Form_MappingInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 800);
+            this.Controls.Add(this.button_save);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_add);
             this.Controls.Add(this.dataGridView_combine);
@@ -202,6 +214,7 @@
         private System.Windows.Forms.DataGridView dataGridView_combine;
         private System.Windows.Forms.Button button_add;
         private System.Windows.Forms.Button button_delete;
+        private System.Windows.Forms.Button button_save;
     }
 }
 
