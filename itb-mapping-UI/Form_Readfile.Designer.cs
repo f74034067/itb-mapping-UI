@@ -52,9 +52,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(46, 64);
+            this.label1.Location = new System.Drawing.Point(34, 51);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 36);
+            this.label1.Size = new System.Drawing.Size(93, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "AVI File";
             // 
@@ -62,9 +63,10 @@
             // 
             this.label_itbfile.AutoSize = true;
             this.label_itbfile.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label_itbfile.Location = new System.Drawing.Point(46, 169);
+            this.label_itbfile.Location = new System.Drawing.Point(34, 135);
+            this.label_itbfile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_itbfile.Name = "label_itbfile";
-            this.label_itbfile.Size = new System.Drawing.Size(113, 36);
+            this.label_itbfile.Size = new System.Drawing.Size(89, 28);
             this.label_itbfile.TabIndex = 1;
             this.label_itbfile.Text = "ITB File";
             // 
@@ -72,28 +74,31 @@
             // 
             this.textBox_avifile.BackColor = System.Drawing.SystemColors.HighlightText;
             this.textBox_avifile.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox_avifile.Location = new System.Drawing.Point(202, 73);
+            this.textBox_avifile.Location = new System.Drawing.Point(152, 58);
+            this.textBox_avifile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_avifile.Name = "textBox_avifile";
             this.textBox_avifile.ReadOnly = true;
-            this.textBox_avifile.Size = new System.Drawing.Size(518, 27);
+            this.textBox_avifile.Size = new System.Drawing.Size(390, 23);
             this.textBox_avifile.TabIndex = 2;
             // 
             // textBox_itbfile
             // 
             this.textBox_itbfile.BackColor = System.Drawing.SystemColors.HighlightText;
             this.textBox_itbfile.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox_itbfile.Location = new System.Drawing.Point(202, 178);
+            this.textBox_itbfile.Location = new System.Drawing.Point(152, 142);
+            this.textBox_itbfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_itbfile.Name = "textBox_itbfile";
             this.textBox_itbfile.ReadOnly = true;
-            this.textBox_itbfile.Size = new System.Drawing.Size(518, 27);
+            this.textBox_itbfile.Size = new System.Drawing.Size(390, 23);
             this.textBox_itbfile.TabIndex = 3;
             // 
             // button_read_avifile
             // 
             this.button_read_avifile.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button_read_avifile.Location = new System.Drawing.Point(761, 73);
+            this.button_read_avifile.Location = new System.Drawing.Point(571, 58);
+            this.button_read_avifile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_read_avifile.Name = "button_read_avifile";
-            this.button_read_avifile.Size = new System.Drawing.Size(175, 27);
+            this.button_read_avifile.Size = new System.Drawing.Size(131, 22);
             this.button_read_avifile.TabIndex = 4;
             this.button_read_avifile.Text = "Open AVI File";
             this.button_read_avifile.UseVisualStyleBackColor = true;
@@ -102,9 +107,10 @@
             // button_read_itbfile
             // 
             this.button_read_itbfile.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button_read_itbfile.Location = new System.Drawing.Point(761, 177);
+            this.button_read_itbfile.Location = new System.Drawing.Point(571, 142);
+            this.button_read_itbfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_read_itbfile.Name = "button_read_itbfile";
-            this.button_read_itbfile.Size = new System.Drawing.Size(175, 27);
+            this.button_read_itbfile.Size = new System.Drawing.Size(131, 22);
             this.button_read_itbfile.TabIndex = 5;
             this.button_read_itbfile.Text = "Open ITB File";
             this.button_read_itbfile.UseVisualStyleBackColor = true;
@@ -113,9 +119,10 @@
             // button_confirm
             // 
             this.button_confirm.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button_confirm.Location = new System.Drawing.Point(202, 327);
+            this.button_confirm.Location = new System.Drawing.Point(152, 262);
+            this.button_confirm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_confirm.Name = "button_confirm";
-            this.button_confirm.Size = new System.Drawing.Size(183, 53);
+            this.button_confirm.Size = new System.Drawing.Size(137, 42);
             this.button_confirm.TabIndex = 6;
             this.button_confirm.Text = "confirm";
             this.button_confirm.UseVisualStyleBackColor = true;
@@ -124,9 +131,10 @@
             // button_exit
             // 
             this.button_exit.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button_exit.Location = new System.Drawing.Point(537, 327);
+            this.button_exit.Location = new System.Drawing.Point(403, 262);
+            this.button_exit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_exit.Name = "button_exit";
-            this.button_exit.Size = new System.Drawing.Size(183, 53);
+            this.button_exit.Size = new System.Drawing.Size(137, 42);
             this.button_exit.TabIndex = 7;
             this.button_exit.Text = "cancel";
             this.button_exit.UseVisualStyleBackColor = true;
@@ -135,9 +143,10 @@
             // button_read_avi_csvfile
             // 
             this.button_read_avi_csvfile.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button_read_avi_csvfile.Location = new System.Drawing.Point(761, 128);
+            this.button_read_avi_csvfile.Location = new System.Drawing.Point(571, 102);
+            this.button_read_avi_csvfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_read_avi_csvfile.Name = "button_read_avi_csvfile";
-            this.button_read_avi_csvfile.Size = new System.Drawing.Size(175, 27);
+            this.button_read_avi_csvfile.Size = new System.Drawing.Size(131, 22);
             this.button_read_avi_csvfile.TabIndex = 10;
             this.button_read_avi_csvfile.Text = "Open AVI_CSV File";
             this.button_read_avi_csvfile.UseVisualStyleBackColor = true;
@@ -147,19 +156,21 @@
             // 
             this.textBox_avi_csv.BackColor = System.Drawing.SystemColors.HighlightText;
             this.textBox_avi_csv.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox_avi_csv.Location = new System.Drawing.Point(202, 127);
+            this.textBox_avi_csv.Location = new System.Drawing.Point(152, 102);
+            this.textBox_avi_csv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_avi_csv.Name = "textBox_avi_csv";
             this.textBox_avi_csv.ReadOnly = true;
-            this.textBox_avi_csv.Size = new System.Drawing.Size(518, 27);
+            this.textBox_avi_csv.Size = new System.Drawing.Size(390, 23);
             this.textBox_avi_csv.TabIndex = 9;
             // 
             // label_avi_csv
             // 
             this.label_avi_csv.AutoSize = true;
             this.label_avi_csv.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label_avi_csv.Location = new System.Drawing.Point(12, 120);
+            this.label_avi_csv.Location = new System.Drawing.Point(9, 96);
+            this.label_avi_csv.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_avi_csv.Name = "label_avi_csv";
-            this.label_avi_csv.Size = new System.Drawing.Size(184, 36);
+            this.label_avi_csv.Size = new System.Drawing.Size(146, 28);
             this.label_avi_csv.TabIndex = 8;
             this.label_avi_csv.Text = "AVI_CSV File";
             // 
@@ -167,9 +178,10 @@
             // 
             this.label_starttime.AutoSize = true;
             this.label_starttime.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label_starttime.Location = new System.Drawing.Point(12, 231);
+            this.label_starttime.Location = new System.Drawing.Point(9, 185);
+            this.label_starttime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_starttime.Name = "label_starttime";
-            this.label_starttime.Size = new System.Drawing.Size(169, 36);
+            this.label_starttime.Size = new System.Drawing.Size(133, 28);
             this.label_starttime.TabIndex = 11;
             this.label_starttime.Text = "Start Time :";
             // 
@@ -177,61 +189,67 @@
             // 
             this.dropdownlist_year.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropdownlist_year.FormattingEnabled = true;
-            this.dropdownlist_year.Location = new System.Drawing.Point(202, 243);
+            this.dropdownlist_year.Location = new System.Drawing.Point(152, 194);
+            this.dropdownlist_year.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dropdownlist_year.Name = "dropdownlist_year";
-            this.dropdownlist_year.Size = new System.Drawing.Size(121, 23);
+            this.dropdownlist_year.Size = new System.Drawing.Size(92, 20);
             this.dropdownlist_year.TabIndex = 12;
             // 
             // dropdownlist_month
             // 
             this.dropdownlist_month.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropdownlist_month.FormattingEnabled = true;
-            this.dropdownlist_month.Location = new System.Drawing.Point(329, 243);
+            this.dropdownlist_month.Location = new System.Drawing.Point(247, 194);
+            this.dropdownlist_month.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dropdownlist_month.Name = "dropdownlist_month";
-            this.dropdownlist_month.Size = new System.Drawing.Size(121, 23);
+            this.dropdownlist_month.Size = new System.Drawing.Size(92, 20);
             this.dropdownlist_month.TabIndex = 13;
             // 
             // dropdownlist_days
             // 
             this.dropdownlist_days.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropdownlist_days.FormattingEnabled = true;
-            this.dropdownlist_days.Location = new System.Drawing.Point(456, 243);
+            this.dropdownlist_days.Location = new System.Drawing.Point(342, 194);
+            this.dropdownlist_days.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dropdownlist_days.Name = "dropdownlist_days";
-            this.dropdownlist_days.Size = new System.Drawing.Size(121, 23);
+            this.dropdownlist_days.Size = new System.Drawing.Size(92, 20);
             this.dropdownlist_days.TabIndex = 14;
             // 
             // dropdownlist_hours
             // 
             this.dropdownlist_hours.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropdownlist_hours.FormattingEnabled = true;
-            this.dropdownlist_hours.Location = new System.Drawing.Point(595, 243);
+            this.dropdownlist_hours.Location = new System.Drawing.Point(446, 194);
+            this.dropdownlist_hours.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dropdownlist_hours.Name = "dropdownlist_hours";
-            this.dropdownlist_hours.Size = new System.Drawing.Size(97, 23);
+            this.dropdownlist_hours.Size = new System.Drawing.Size(74, 20);
             this.dropdownlist_hours.TabIndex = 15;
             // 
             // dropdownlist_min
             // 
             this.dropdownlist_min.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropdownlist_min.FormattingEnabled = true;
-            this.dropdownlist_min.Location = new System.Drawing.Point(698, 243);
+            this.dropdownlist_min.Location = new System.Drawing.Point(524, 194);
+            this.dropdownlist_min.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dropdownlist_min.Name = "dropdownlist_min";
-            this.dropdownlist_min.Size = new System.Drawing.Size(97, 23);
+            this.dropdownlist_min.Size = new System.Drawing.Size(74, 20);
             this.dropdownlist_min.TabIndex = 16;
             // 
             // dropdownlist_sec
             // 
             this.dropdownlist_sec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropdownlist_sec.FormattingEnabled = true;
-            this.dropdownlist_sec.Location = new System.Drawing.Point(801, 243);
+            this.dropdownlist_sec.Location = new System.Drawing.Point(601, 194);
+            this.dropdownlist_sec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dropdownlist_sec.Name = "dropdownlist_sec";
-            this.dropdownlist_sec.Size = new System.Drawing.Size(97, 23);
+            this.dropdownlist_sec.Size = new System.Drawing.Size(74, 20);
             this.dropdownlist_sec.TabIndex = 17;
             // 
             // Form_Readfile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(962, 450);
+            this.ClientSize = new System.Drawing.Size(722, 360);
             this.Controls.Add(this.dropdownlist_sec);
             this.Controls.Add(this.dropdownlist_min);
             this.Controls.Add(this.dropdownlist_hours);
@@ -250,6 +268,7 @@
             this.Controls.Add(this.textBox_avifile);
             this.Controls.Add(this.label_itbfile);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form_Readfile";
             this.Text = "Readfile";
             this.ResumeLayout(false);

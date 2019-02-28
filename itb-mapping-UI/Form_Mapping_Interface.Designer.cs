@@ -40,6 +40,8 @@
             this.dataGridView_combine = new System.Windows.Forms.DataGridView();
             this.button_add = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
+            this.textBox_savefile_path = new System.Windows.Forms.TextBox();
+            this.button_filepath = new System.Windows.Forms.Button();
             this.button_save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_avicsv)).BeginInit();
@@ -70,7 +72,7 @@
             // 
             // button_pause
             // 
-            this.button_pause.Location = new System.Drawing.Point(83, 327);
+            this.button_pause.Location = new System.Drawing.Point(83, 325);
             this.button_pause.Name = "button_pause";
             this.button_pause.Size = new System.Drawing.Size(60, 21);
             this.button_pause.TabIndex = 4;
@@ -146,7 +148,7 @@
             // 
             // button_add
             // 
-            this.button_add.Location = new System.Drawing.Point(532, 326);
+            this.button_add.Location = new System.Drawing.Point(315, 327);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(60, 21);
             this.button_add.TabIndex = 11;
@@ -156,7 +158,7 @@
             // 
             // button_delete
             // 
-            this.button_delete.Location = new System.Drawing.Point(608, 326);
+            this.button_delete.Location = new System.Drawing.Point(381, 327);
             this.button_delete.Name = "button_delete";
             this.button_delete.Size = new System.Drawing.Size(60, 21);
             this.button_delete.TabIndex = 12;
@@ -164,21 +166,41 @@
             this.button_delete.UseVisualStyleBackColor = true;
             this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
+            // textBox_savefile_path
+            // 
+            this.textBox_savefile_path.Location = new System.Drawing.Point(560, 758);
+            this.textBox_savefile_path.Name = "textBox_savefile_path";
+            this.textBox_savefile_path.Size = new System.Drawing.Size(315, 22);
+            this.textBox_savefile_path.TabIndex = 16;
+            // 
+            // button_filepath
+            // 
+            this.button_filepath.Location = new System.Drawing.Point(881, 758);
+            this.button_filepath.Name = "button_filepath";
+            this.button_filepath.Size = new System.Drawing.Size(60, 21);
+            this.button_filepath.TabIndex = 17;
+            this.button_filepath.Text = "Path";
+            this.button_filepath.UseVisualStyleBackColor = true;
+            this.button_filepath.Click += new System.EventHandler(this.button_filepath_Click);
+            // 
             // button_save
             // 
-            this.button_save.Location = new System.Drawing.Point(956, 327);
+            this.button_save.Location = new System.Drawing.Point(956, 758);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(60, 21);
-            this.button_save.TabIndex = 13;
+            this.button_save.TabIndex = 18;
             this.button_save.Text = "Save";
             this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // Form_MappingInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 800);
+            this.ClientSize = new System.Drawing.Size(1072, 789);
             this.Controls.Add(this.button_save);
+            this.Controls.Add(this.button_filepath);
+            this.Controls.Add(this.textBox_savefile_path);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_add);
             this.Controls.Add(this.dataGridView_combine);
@@ -190,7 +212,9 @@
             this.Controls.Add(this.button_pause);
             this.Controls.Add(this.button_play);
             this.Controls.Add(this.axWindowsMediaPlayer1);
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "Form_MappingInterface";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mapping interface";
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_avicsv)).EndInit();
@@ -214,6 +238,8 @@
         private System.Windows.Forms.DataGridView dataGridView_combine;
         private System.Windows.Forms.Button button_add;
         private System.Windows.Forms.Button button_delete;
+        private System.Windows.Forms.TextBox textBox_savefile_path;
+        private System.Windows.Forms.Button button_filepath;
         private System.Windows.Forms.Button button_save;
     }
 }

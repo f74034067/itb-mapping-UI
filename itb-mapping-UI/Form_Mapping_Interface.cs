@@ -119,7 +119,6 @@ namespace itb_mapping_UI
         {
             setup_datagridview_combine();
         }
-
         /* ================================================
          * =============    File Handle    ================
          * ================================================*/
@@ -494,6 +493,70 @@ namespace itb_mapping_UI
             }
             return row;
         }
+
+        private void button_filepath_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog file = new SaveFileDialog();
+            file.RestoreDirectory = true;
+            file.InitialDirectory = "c:\\";
+            file.Title = "Save Comebin File";
+            file.Filter = "csv檔|*.csv|文字檔|*.txt|所有檔|*.*";
+            file.FilterIndex = 1;
+            if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                //this.textBox_itbfile.Text = file.SafeFileName;
+                this.textBox_savefile_path.Text = file.FileName;
+            }
+        }
+
+        private void button_save_Click(object sender, EventArgs e)
+        {
+            if (textBox_savefile_path.Text.Equals("")) {
+                MessageBox.Show("Please select the path", "Choose again");
+            } else if (dataGridView_combine.Rows.Count<=1)
+            {
+                MessageBox.Show("There is no data in combine_csv", "ERROR");
+            }
+            else
+            {
+                writeCSV(dataGridView_combine, textBox_savefile_path.Text);
+                MessageBox.Show("Save Successfully!");
+            }
+
+        }
+        public void writeCSV(DataGridView dgv, string outputFile)
+        {
+            //settings
+            //string delimiter = "|";
+            string delimiter = ",";
+
+            StreamWriter csvStreamWriter = new StreamWriter(outputFile, false, System.Text.Encoding.UTF8);
+
+            //output header data
+            string strHeader = "";
+            for (int i = 0; i < dgv.Columns.Count; i++)
+            {
+                strHeader += dgv.Columns[i].HeaderText + delimiter;
+            }
+            csvStreamWriter.WriteLine(strHeader);
+
+            //output rows data
+            for (int j = 0; j < dgv.Rows.Count; j++)
+            {
+                string strRowValue = "";
+
+                for (int k = 0; k < dgv.Columns.Count; k++)
+                {
+                    strRowValue += dgv.Rows[j].Cells[k].Value + delimiter;
+
+                }
+                csvStreamWriter.WriteLine(strRowValue);
+            }
+
+            csvStreamWriter.Close();
+        }
+
+
 
         /* ================================================
          * ============    add new things    ==============
