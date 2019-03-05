@@ -26,7 +26,7 @@ namespace itb_mapping_UI
             file.RestoreDirectory = true;
             file.InitialDirectory = "c:\\";
             file.Title = "Open AVI File";
-            file.Filter = "所有影像檔|*.mp4;*.avi|所有檔|*.*";
+            file.Filter = "所有影像檔|*.mp4;*.avi;*.mov|所有檔|*.*";
             file.FilterIndex = 1;
 
             if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK)

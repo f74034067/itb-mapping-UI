@@ -87,7 +87,7 @@
             this.dataGridView_avicsv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_avicsv.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dataGridView_avicsv.Location = new System.Drawing.Point(532, 22);
-            this.dataGridView_avicsv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView_avicsv.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView_avicsv.MultiSelect = false;
             this.dataGridView_avicsv.Name = "dataGridView_avicsv";
             this.dataGridView_avicsv.ReadOnly = true;
@@ -101,7 +101,7 @@
             this.dataGridView_itbcsv.AllowUserToAddRows = false;
             this.dataGridView_itbcsv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_itbcsv.Location = new System.Drawing.Point(19, 353);
-            this.dataGridView_itbcsv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView_itbcsv.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView_itbcsv.MultiSelect = false;
             this.dataGridView_itbcsv.Name = "dataGridView_itbcsv";
             this.dataGridView_itbcsv.ReadOnly = true;
@@ -203,9 +203,9 @@
             this.label_savepath.Location = new System.Drawing.Point(422, 758);
             this.label_savepath.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_savepath.Name = "label_savepath";
-            this.label_savepath.Size = new System.Drawing.Size(133, 21);
+            this.label_savepath.Size = new System.Drawing.Size(123, 21);
             this.label_savepath.TabIndex = 19;
-            this.label_savepath.Text = "Your Save Path :";
+            this.label_savepath.Text = "Save File Path :";
             // 
             // Form_MappingInterface
             // 
