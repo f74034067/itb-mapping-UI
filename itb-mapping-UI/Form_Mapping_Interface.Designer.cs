@@ -43,6 +43,7 @@
             this.textBox_savefile_path = new System.Windows.Forms.TextBox();
             this.button_filepath = new System.Windows.Forms.Button();
             this.button_save = new System.Windows.Forms.Button();
+            this.label_savepath = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_avicsv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_itbcsv)).BeginInit();
@@ -86,7 +87,7 @@
             this.dataGridView_avicsv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_avicsv.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dataGridView_avicsv.Location = new System.Drawing.Point(532, 22);
-            this.dataGridView_avicsv.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView_avicsv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView_avicsv.MultiSelect = false;
             this.dataGridView_avicsv.Name = "dataGridView_avicsv";
             this.dataGridView_avicsv.ReadOnly = true;
@@ -100,7 +101,7 @@
             this.dataGridView_itbcsv.AllowUserToAddRows = false;
             this.dataGridView_itbcsv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_itbcsv.Location = new System.Drawing.Point(19, 353);
-            this.dataGridView_itbcsv.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView_itbcsv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView_itbcsv.MultiSelect = false;
             this.dataGridView_itbcsv.Name = "dataGridView_itbcsv";
             this.dataGridView_itbcsv.ReadOnly = true;
@@ -195,11 +196,23 @@
             this.button_save.UseVisualStyleBackColor = true;
             this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
+            // label_savepath
+            // 
+            this.label_savepath.AutoSize = true;
+            this.label_savepath.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label_savepath.Location = new System.Drawing.Point(422, 758);
+            this.label_savepath.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_savepath.Name = "label_savepath";
+            this.label_savepath.Size = new System.Drawing.Size(133, 21);
+            this.label_savepath.TabIndex = 19;
+            this.label_savepath.Text = "Your Save Path :";
+            // 
             // Form_MappingInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 800);
+            this.Controls.Add(this.label_savepath);
             this.Controls.Add(this.button_save);
             this.Controls.Add(this.button_filepath);
             this.Controls.Add(this.textBox_savefile_path);
@@ -214,7 +227,6 @@
             this.Controls.Add(this.button_pause);
             this.Controls.Add(this.button_play);
             this.Controls.Add(this.axWindowsMediaPlayer1);
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "Form_MappingInterface";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mapping interface";
@@ -243,6 +255,7 @@
         private System.Windows.Forms.TextBox textBox_savefile_path;
         private System.Windows.Forms.Button button_filepath;
         private System.Windows.Forms.Button button_save;
+        private System.Windows.Forms.Label label_savepath;
     }
 }
 
